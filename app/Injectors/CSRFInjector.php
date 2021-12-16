@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Widgets;
+namespace App\Injectors;
 
 
 use App\Core\App;
@@ -9,8 +9,9 @@ use App\Core\Request;
 use App\Core\Response;
 use App\Core\View;
 use App\Http\Helpers\CSRFHelper;
+use OSN\Framework\Core\Injector;
 
-class CSRFWidget
+class CSRFInjector extends Injector
 {
     use CSRFHelper;
 
@@ -18,6 +19,6 @@ class CSRFWidget
     {
         $token = self::generate();
         App::$app->session->set("__csrf_token", $token);
-        return sprintf("\n<input type='hidden' name='__csrf_token' value='%s'>\n", $token);
+        return $this->renderHTML("\n<input type='hidden' name='__csrf_token' value='%s'>\n", $token);
     }
 }

@@ -14,22 +14,7 @@ class {{ controller }} extends Controller
 
     }
 
-    public function view()
-    {
-
-    }
-
-    public function create()
-    {
-
-    }
-
     public function store(Request $request)
-    {
-
-    }
-
-    public function edit()
     {
 
     }

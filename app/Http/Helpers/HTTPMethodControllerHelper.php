@@ -5,11 +5,11 @@ namespace App\Http\Helpers;
 
 
 /**
- * @method get(string $route, array $array)
- * @method post(string $route, array $array)
- * @method put(string $route, array $array)
- * @method patch(string $route, array $array)
- * @method delete(string $route, array $array)
+ * @method get(string $route, $array)
+ * @method post(string $route, $array)
+ * @method put(string $route, $array)
+ * @method patch(string $route, $array)
+ * @method delete(string $route, $array)
  *
  * @todo Add functionality to interact with web controllers properly.
  */
@@ -22,6 +22,7 @@ trait HTTPMethodControllerHelper
         "patch" => "update",
         "delete" => "delete",
     ];
+
     protected array $webHandlers = [
         "get" => "index",
         "post" => "create",

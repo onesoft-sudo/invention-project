@@ -1,7 +1,7 @@
 <?php
 
 use App\Core\App;
-use App\Widgets\CSRFWidget;
+use App\Injectors\CSRFInjector;
 
 ?>
 <div class="row">
@@ -21,7 +21,7 @@ use App\Widgets\CSRFWidget;
         ?>
         <br>
         <form action="" method="post">
-            <?= new CSRFWidget(); ?>
+            <?= new CSRFInjector(); ?>
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" <?= isset($model->name) ? "value=\"" . $model->name . "\" " : ""; ?>name="name" class="form-control<?= isset($errors["name"]) ? " is-invalid" : ""; ?>" id="name">

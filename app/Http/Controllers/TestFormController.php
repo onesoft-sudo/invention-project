@@ -19,18 +19,22 @@ class TestFormController extends Controller
         return $this->render("testform");
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        return response(null, 403, 'Forbidden');
+
     }
 
     public function update()
     {
-        return $this->render("testform-post");
+        return $this->render("testform-post", [
+            "model" => ["update", \request()]
+        ]);
     }
 
     public function delete()
     {
-        return $this->render("testform-post");
+        return $this->render("testform-post", [
+            "model" => ["delete", \request()]
+        ]);
     }
 }

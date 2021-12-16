@@ -1,6 +1,7 @@
 <?php
 
-use App\Widgets\CSRFWidget;
+use App\Injectors\CSRFInjector;
+use App\Injectors\HTTPMethodInjector;
 
 ?>
 <div class="row">
@@ -8,7 +9,7 @@ use App\Widgets\CSRFWidget;
         <h1>Test Form</h1>
 
         <form action="<?= $this->getURI(); ?>" method="post">
-            <?= new CSRFWidget(); ?>
+            <?= new CSRFInjector(); ?>
             <div class="form-group mb-2">
                 <label for="i1">Name</label>
                 <input type="text" name="name" id="i1" class="form-control">

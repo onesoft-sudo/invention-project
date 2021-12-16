@@ -13,6 +13,7 @@ class Request
     use HTTPRequestParser;
 
     public string $method;
+    public string $realMethod;
     public string $uri;
     public string $baseURI;
     public string $protocol;
@@ -26,7 +27,9 @@ class Request
     public object $get;
     public array $uploadedFiles;
 
-    public function __construct(?array $data = null)
+    private bool $errmode_exception;
+
+    public function __construct(?array $data = null, bool $errmode_exception = true)
     {
         if ($data === null) {
             $data = [
@@ -41,7 +44,12 @@ class Request
             ];
         }
 
-        $this->method = $data["method"];
+        $this->post = (object) $data["post"];
+        $this->get = (object) $data["get"];
+        $this->uploadedFiles = $data["files"];
+
+        $this->realMethod = $data["method"];
+        $this->method = $this->getMethod();
         $this->uri = $data["uri"];
         $this->baseURI = $this->getBaseURI($this->uri);
         $this->protocol = $data["protocol"];
@@ -50,9 +58,8 @@ class Request
         $this->port = $this->getPort($this->host);
         $this->ssl = $data["ssl"];
         $this->queryString = $this->getQueryString($this->uri);
-        $this->post = (object) $data["post"];
-        $this->get = (object) $data["get"];
-        $this->uploadedFiles = $data["files"];
+
+        $this->errmode_exception = $errmode_exception;
     }
 
     public function get(string $key)
@@ -81,16 +88,26 @@ class Request
     {
         $method = $this->method;
 
-        if ($this->method === 'GET') {
+        if (!$this->isWriteRequest()) {
             $prop = $this->get($name);
         }
         else {
             $prop = $this->post($name);
         }
 
-        if ($prop === false)
+        if ($prop === false && $this->errmode_exception)
             throw new PropertyNotFoundException();
 
         return $prop;
+    }
+
+    public function getMethod()
+    {
+        $realMethod = $this->realMethod;
+
+        if ($realMethod !== 'POST' || !isset($this->post->__method))
+            return $realMethod;
+
+        return strtoupper($this->post->__method);
     }
 }

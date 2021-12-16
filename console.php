@@ -36,8 +36,9 @@ switch ($argv[1]) {
     case "gen:controller":
         $appConsole->argument->requireArgument(1);
         $name = $argv[2];
+        $api = $appConsole->argument->hasArgument('--api');
         $path = "/app/Http/Controllers/$name.php";
-        $appConsole->generator->generate($app->config["root_dir"] . $path, "controller.php", "controller", $name);
+        $appConsole->generator->generate($app->config["root_dir"] . $path, $api ? "controller-api.php" : "controller.php", "controller", $name);
         echo "Controller Created: $name [.$path]\n";
         break;
 
