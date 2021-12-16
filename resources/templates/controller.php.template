@@ -1,0 +1,30 @@
+<?php
+
+
+namespace App\Http\Controllers;
+
+use App\Core\Controller;
+use App\Core\View;
+
+class {{ controller }} extends Controller
+{
+    public function index(): View
+    {
+
+    }
+
+    public function store(): View
+    {
+
+    }
+
+    public function update(): View
+    {
+
+    }
+
+    public function delete(): View
+    {
+
+    }
+}

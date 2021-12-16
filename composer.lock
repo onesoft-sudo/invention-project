@@ -1,0 +1,58 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "2c24c35ea7d099efb9d2234c8ba957b3",
+    "packages": [
+        {
+            "name": "osn/envoy",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/onesoft-sudo/envoy.git",
+                "reference": "da8d929ecf21ae2e43d8636bafd99e93db58fcaa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/onesoft-sudo/envoy/zipball/da8d929ecf21ae2e43d8636bafd99e93db58fcaa",
+                "reference": "da8d929ecf21ae2e43d8636bafd99e93db58fcaa",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OSN\\Envoy\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Ar Rakin",
+                    "email": "rakinar2@gmail.com"
+                }
+            ],
+            "description": "A simple environment configuration loader.",
+            "support": {
+                "issues": "https://github.com/onesoft-sudo/envoy/issues",
+                "source": "https://github.com/onesoft-sudo/envoy/tree/v1.0.1"
+            },
+            "time": "2021-12-10T13:37:08+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "ext-pdo": "*"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
+}

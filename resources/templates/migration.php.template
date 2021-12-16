@@ -1,0 +1,27 @@
+<?php
+
+
+use App\Core\Migration;
+
+class {{ migration }} extends Migration
+{
+    /**
+     * Method safeUp()
+     *
+     * @param \PDO $pdo
+     */
+    public function safeUp($pdo)
+    {
+        $pdo->query();
+    }
+
+    /**
+     * Method safeDown()
+     *
+     * @param \PDO $pdo
+     */
+    public function safeDown($pdo)
+    {
+        $pdo->query();
+    }
+}

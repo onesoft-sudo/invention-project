@@ -1,0 +1,20 @@
+<?php
+
+
+namespace App\Models;
+
+
+use App\Core\Model;
+
+class {{ model }} extends Model
+{
+    protected function rules(): array
+    {
+        return [];
+    }
+
+    public function save()
+    {
+        // TODO: Save model data to database
+    }
+}
