@@ -30,14 +30,26 @@ abstract class Model
         return empty($this->__errors);
     }
 
+    protected function db()
+    {
+        return App::db();
+    }
+
     public function validate(): bool
     {
         $rules = $this->rules();
 
+
         foreach ($rules as $field => $ruleList) {
+            $fillables = $this->fillable();
+
+            if ($fillables !== false && !in_array($field, $fillables))
+                continue;
+
             $value = $this->{$field};
 
             foreach ($ruleList as $rule) {
+
                 if ($rule === "int" && isset($this->{$field}) && !filter_var($value, FILTER_VALIDATE_INT)) {
                     $this->addError($field, $rule, "The $field must be an integer");
                 }
@@ -80,7 +92,7 @@ abstract class Model
                     $newField = $field . "Confirmation";
 
                     if (!isset($this->$newField) || $value !== $this->$newField) {
-                        $this->addError($field, $rule, "The $field must be same as $newField");
+                        $this->addError($newField, $rule, "The $field confirmation must be same as $field");
                     }
                 }
             }
@@ -93,9 +105,18 @@ abstract class Model
         return true;
     }
 
-    public function load(array $data)
+    protected function fillable()
     {
+        return false;
+    }
+
+    public function load(array $data, bool $fillall = false)
+    {
+        $fillables = $this->fillable();
         foreach ($data as $key => $value) {
+            if ($fillall === false && $fillables !== false && !in_array($key, $fillables))
+                continue;
+
             $this->{$key} = $value;
         }
     }

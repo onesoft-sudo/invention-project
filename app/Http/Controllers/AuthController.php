@@ -44,10 +44,6 @@ class AuthController extends Controller
             ]);
         }
 
-        $userLogin->load([
-            "password" => Hash::sha1($password),
-        ]);
-
         $user = Auth::authUser($userLogin);
 
         if ($user !== false){

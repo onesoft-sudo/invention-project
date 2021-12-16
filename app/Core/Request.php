@@ -33,10 +33,10 @@ class Request
                 "get" => $_GET,
                 "post" => $_POST,
                 "files" => $_FILES,
-                "method" => strtoupper(trim($_SERVER['REQUEST_METHOD'])),
-                "uri" => $_SERVER['REQUEST_URI'],
-                "protocol" => $_SERVER['SERVER_PROTOCOL'],
-                "host" => $_SERVER["HTTP_HOST"],
+                "method" => strtoupper(trim($_SERVER['REQUEST_METHOD'] ?? '')),
+                "uri" => $_SERVER['REQUEST_URI'] ?? '',
+                "protocol" => $_SERVER['SERVER_PROTOCOL'] ?? '',
+                "host" => $_SERVER["HTTP_HOST"] ?? '',
                 "ssl" => isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] === 'on'
             ];
         }

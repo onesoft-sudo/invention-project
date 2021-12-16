@@ -23,8 +23,8 @@ use App\Widgets\CSRFWidget;
         <form action="" method="post">
             <?= new CSRFWidget(); ?>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Username</label>
-                <input type="text" <?= isset($model->username) ? "value=\"" . $model->username . "\" " : ""; ?>name="username" class="form-control<?= isset($errors["username"]) ? " is-invalid" : ""; ?>" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" <?= isset($model->username) ? "value=\"" . $model->username . "\" " : ""; ?>name="username" class="form-control<?= isset($errors["username"]) ? " is-invalid" : ""; ?>" id="username">
                 <?php
                     if(isset($errors["username"])):
                 ?>
@@ -36,8 +36,8 @@ use App\Widgets\CSRFWidget;
                 ?>
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" name="password" class="form-control<?= isset($errors["password"]) ? " is-invalid" : ""; ?>" id="exampleInputPassword1">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control<?= isset($errors["password"]) ? " is-invalid" : ""; ?>" id="password">
                 <?php
                     if(isset($errors["password"])):
                 ?>

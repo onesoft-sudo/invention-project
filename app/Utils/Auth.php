@@ -5,8 +5,9 @@ namespace App\Utils;
 
 
 use App\Core\App;
-use App\Core\Model;
 use App\Models\User;
+use App\Models\UserLogin;
+use OSN\Framework\Facades\Hash;
 
 class Auth
 {
@@ -18,7 +19,7 @@ class Auth
     /**
      *  @return User|bool
      */
-    public function authUser(Model $model)
+    public function authUser(UserLogin $model)
     {
         $q = App::db()->prepare("SELECT * FROM users WHERE username = :u AND password = :p");
 
@@ -27,7 +28,7 @@ class Auth
 
         $q->execute([
             "u" => $username,
-            "p" => $password
+            "p" => Hash::sha1($password)
         ]);
 
         $userData = $q->fetchAll(\PDO::FETCH_ASSOC);
@@ -41,7 +42,7 @@ class Auth
                 "uid" => $userData[0]["uid"],
                 "username" => $username,
                 "password" => $password
-            ]);
+            ], true);
 
             return $user;
         }
@@ -62,7 +63,7 @@ class Auth
 
         if (count($userData) > 0) {
             $user = new User();
-            $user->load($userData[0]);
+            $user->load($userData[0], true);
 
             return $user;
         }
