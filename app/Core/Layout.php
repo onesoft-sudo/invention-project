@@ -5,6 +5,7 @@ namespace App\Core;
 
 
 use App\Exceptions\FileNotFoundException;
+use OSN\Framework\PowerParser\PowerParser;
 
 class Layout
 {
@@ -26,12 +27,27 @@ class Layout
         $file = App::$app->config["root_dir"] . "/resources/views/layouts/" . $this->name . ".php";
 
         if (!is_file($file)) {
+            $isPower = true;
+            $file = App::$app->config["root_dir"] . "/resources/views/layouts/" . $this->name . ".power.php";
+        }
+
+        if (!is_file($file)) {
             throw new FileNotFoundException("Couldn't find the specified layout '{$this->name}': No such file or directory");
+        }
+
+        if(isset($isPower)) {
+            $power = new PowerParser($file);
+            $file = ($power)()['file'];
         }
 
         ob_start();
         include $file;
-        return ob_get_clean();
+        $out = ob_get_clean();
+
+        if (isset($isPower))
+            unlink($file);
+
+        return $out;
     }
 
     public function getName()

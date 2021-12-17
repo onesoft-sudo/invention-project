@@ -1,6 +1,6 @@
 .env
 .idea/
 vendor/
-tmp/*
 framework/
 framework-helpers/
+public/test.php

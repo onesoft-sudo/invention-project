@@ -65,6 +65,11 @@ class App
         return self::$app->response;
     }
 
+    public static function config($key)
+    {
+        return self::$app->config[$key];
+    }
+
     public function run()
     {
         try {

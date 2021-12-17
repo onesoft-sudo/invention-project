@@ -21,7 +21,7 @@ class TestFormController extends Controller
 
     public function store(Request $request)
     {
-
+        return 'done';
     }
 
     public function update()
