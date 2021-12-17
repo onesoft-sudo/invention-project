@@ -9,4 +9,11 @@ require "../vendor/autoload.php";
 
 $app = new App("..");
 
-$collection = collection([1, 2, 3, 4, 5, 6]);
+$collection = collection([
+    "test2",
+    "divide",
+    "sumf0",
+    485075.34346
+]);
+
+dp($collection->search('/0/'));
