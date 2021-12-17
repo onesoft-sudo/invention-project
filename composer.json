@@ -1,11 +1,12 @@
 {
     "name": "osn/php-mvc",
     "type": "project",
+    "description": "The Invention Framework Project",
     "require": {
         "osn/envoy": "^1.0",
         "ext-pdo": "*"
     },
-    "license": "GPL-v3-or-later",
+    "license": "GPL-3.0-or-later",
     "autoload": {
         "psr-4": {
             "App\\": "app/",
