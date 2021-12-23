@@ -4,4 +4,3 @@ vendor/
 framework/
 framework-helpers/
 public/test.php
-storage/database.db
