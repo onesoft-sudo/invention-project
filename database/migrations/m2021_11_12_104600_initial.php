@@ -1,23 +1,22 @@
 <?php
 
-
-use App\Core\Migration;
+use OSN\Framework\Core\Migration;
+use OSN\Framework\Database\Common\Blueprint;
+use OSN\Framework\Facades\Schema;
 
 class m2021_11_12_104600_initial extends Migration
 {
-    protected bool $entryLogging = true;
-
-    public function safeUp($pdo)
+    public function safeUp()
     {
-        $pdo->query("CREATE TABLE migrations(
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL,
-            applied_at TIMESTAMP NOT NULL
-        );");
+        Schema::create('migrations', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps('created_at');
+        });
     }
 
-    public function safeDown($pdo)
+    public function safeDown()
     {
-        $pdo->query("DROP TABLE migrations;");
+        Schema::dropIfExists('migrations');
     }
 }

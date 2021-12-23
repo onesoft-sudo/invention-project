@@ -1,1 +1,10 @@
-+ Implement models
+- Check & fix models
+- Fix login & registration
+- Implement requests
+- Implement factories
+- Fix models
+- Add command-line support
+
++ Implement seeders
++ Implement resources
++ Fix commands

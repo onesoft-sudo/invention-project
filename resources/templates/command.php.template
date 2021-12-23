@@ -1,0 +1,25 @@
+<?php
+
+
+namespace App\Commands;
+
+use OSN\Framework\Console\ArgumentCollection;
+use OSN\Framework\Console\Command;
+
+class %s extends Command
+{
+    public function __construct()
+    {
+
+    }
+
+    public function subcommandsDescription(): array
+    {
+        return [];
+    }
+
+    public function default(ArgumentCollection $args)
+    {
+
+    }
+}

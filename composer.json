@@ -4,13 +4,17 @@
     "description": "The Invention Framework Project",
     "require": {
         "osn/envoy": "^1.0",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "fakerphp/faker": "^1.17",
+        "ext-json": "*",
+        "symfony/var-dumper": "^5.4"
     },
     "license": "GPL-3.0-or-later",
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "OSN\\Framework\\": "framework/src/"
+            "OSN\\Framework\\": "framework/src/",
+            "Database\\Factories\\": "database/factories/"
         },
         "files": [
             "framework-helpers/src/mainhelper.php"

@@ -3,9 +3,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Core\Controller;
-use App\Core\Request;
-use App\Core\Response;
+use App\Http\Requests\StoreTestFormRequest;
+use App\Models\User;
+use Database\Factories\UserFactory;
+use OSN\Framework\Core\Controller;
 
 class TestFormController extends Controller
 {
@@ -19,9 +20,9 @@ class TestFormController extends Controller
         return $this->render("testform");
     }
 
-    public function store(Request $request)
+    public function store(StoreTestFormRequest $request)
     {
-        return 'done';
+        dd(User::factory()->count(5)->make());
     }
 
     public function update()

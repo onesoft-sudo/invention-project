@@ -2,19 +2,17 @@
 
 namespace App\Http\Middlewares;
 
-use App\Core\Middleware;
-use App\Core\Request;
-use OSN\Framework\Facades\Response;
-use App\Core\View;
+use OSN\Framework\Core\Middleware;
 use App\Exceptions\HTTPException;
-use App\Http\Helpers\CSRFHelper;
+use OSN\Framework\Http\CSRFHelper;
+use OSN\Framework\Http\Request;
 
 class VerifyCSRF extends Middleware
 {
     use CSRFHelper;
 
     /**
-     * @return ?string|Response|View|bool
+     * @return ?bool
      * @throws HTTPException
      */
     public function handle(Request $request)

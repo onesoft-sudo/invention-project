@@ -3,13 +3,9 @@
 
 namespace App\Injectors;
 
-
-use App\Core\App;
-use App\Core\Request;
-use App\Core\Response;
-use App\Core\View;
-use App\Http\Helpers\CSRFHelper;
+use OSN\Framework\Core\App;
 use OSN\Framework\Core\Injector;
+use OSN\Framework\Http\CSRFHelper;
 
 class CSRFInjector extends Injector
 {

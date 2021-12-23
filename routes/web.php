@@ -4,12 +4,12 @@
  */
 
 use App\Http\Controllers\RegisterController;
-use OSN\Framework\Facades\Router;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MWController;
 use App\Http\Controllers\TestFormController;
+use OSN\Framework\Facades\Router;
 
 
 Router::get("/", [HomeController::class]);

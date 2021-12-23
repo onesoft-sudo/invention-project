@@ -1,0 +1,14 @@
+<?php
+
+
+namespace App\Injectors;
+
+use OSN\Framework\Core\Injector;
+
+class %s extends Injector
+{
+    public function __toString()
+    {
+        return '';
+    }
+}

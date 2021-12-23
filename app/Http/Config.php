@@ -4,7 +4,7 @@ namespace App\Http;
 
 use App\Http\Middlewares\VerifyCSRF;
 
-class Kernel
+class Config
 {
     public array $globalMiddlewares = [
         VerifyCSRF::class

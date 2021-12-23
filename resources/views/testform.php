@@ -18,6 +18,10 @@ use App\Injectors\HTTPMethodInjector;
                 <label for="i2">Username</label>
                 <input type="text" name="username" id="i2" class="form-control">
             </div>
+            <div class="form-group mb-2">
+                <label for="i2">Username 2</label>
+                <input type="text" name="test" id="i2" class="form-control">
+            </div>
             <div class="form-group">
                 <button class="btn btn-primary" type="submit">Submit</button>
             </div>

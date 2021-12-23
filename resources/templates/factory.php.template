@@ -1,0 +1,18 @@
+<?php
+
+
+namespace Database\Factories;
+
+
+use App\Models\%s;
+use OSN\Framework\Database\Factory;
+
+class %s extends Factory
+{
+    protected string $model = %s::class;
+
+    public function define(): array
+    {
+        return [];
+    }
+}

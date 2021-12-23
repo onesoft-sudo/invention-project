@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Core\Controller;
 use App\Models\User;
+use OSN\Framework\Core\Controller;
 
 class HomeController extends Controller
 {

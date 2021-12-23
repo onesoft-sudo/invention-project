@@ -1,27 +1,21 @@
 <?php
 
+use OSN\Framework\Core\Migration;
+use OSN\Framework\Database\Common\Blueprint;
+use OSN\Framework\Facades\Schema;
 
-use App\Core\Migration;
-
-class {{ migration }} extends Migration
+class %s extends Migration
 {
-    /**
-     * Method safeUp()
-     *
-     * @param \PDO $pdo
-     */
-    public function safeUp($pdo)
+    public function safeUp()
     {
-        $pdo->query();
+        Schema::create('%s', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+        });
     }
 
-    /**
-     * Method safeDown()
-     *
-     * @param \PDO $pdo
-     */
-    public function safeDown($pdo)
+    public function safeDown()
     {
-        $pdo->query();
+        Schema::dropIfExists('%s');
     }
 }

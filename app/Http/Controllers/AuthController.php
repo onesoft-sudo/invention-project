@@ -3,13 +3,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Core\App;
-use App\Core\Controller;
+use OSN\Framework\Core\App;
+use App\Http\Requests\AuthUserRequest;
+use App\Models\User;
+use OSN\Framework\Core\Controller;
+use OSN\Framework\Core\View;
 use OSN\Framework\Facades\Request;
 use OSN\Framework\Facades\Response;
-use App\Core\View;
 use App\Http\Middlewares\LoginMiddleware;
-use App\Models\UserLogin;
 use OSN\Framework\Facades\Auth;
 use OSN\Framework\Facades\Hash;
 
@@ -25,29 +26,25 @@ class AuthController extends Controller
         return $this->render("auth");
     }
 
-    public function login(): View
+    public function login(AuthUserRequest $request): View
     {
-        $username = Request::post("username");
-        $password = Request::post("password");
-
-        $userLogin = new UserLogin();
-
-        $userLogin->load([
-            "username" => $username,
-            "password" => $password,
-        ]);
-
-        if (!$userLogin->validate()) {
+        if (!$request->validate()) {
             return $this->render("auth", [
-                "model" => $userLogin,
-                "errors" => $userLogin->getErrors()
+                "request" => $request,
+                "errors" => $request->getErrors()
             ]);
         }
 
-        $user = Auth::authUser($userLogin);
+        $user = new User();
+
+        $user->load([
+            "username" => $request->username,
+            "password" => Hash::sha1($request->password),
+        ]);
+
+        $user = Auth::authUser($user);
 
         if ($user !== false){
-            App::session()->setFromModel($user, ["password", "passwordConfirmation"]);
             Response::redirect("/dashboard");
         }
         else {

@@ -4,17 +4,10 @@
 namespace App\Models;
 
 
-use App\Core\Model;
+use OSN\Framework\Core\Model;
+use OSN\Framework\Database\HasFactory;
 
-class {{ model }} extends Model
+class %s extends Model
 {
-    protected function rules(): array
-    {
-        return [];
-    }
-
-    public function save()
-    {
-        // TODO: Save model data to database
-    }
+    use HasFactory;
 }

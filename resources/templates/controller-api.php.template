@@ -3,23 +3,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Core\Controller;
-use App\Core\View;
-use App\Core\Request;
+use OSN\Framework\Core\Controller;
+use OSN\Framework\Http\Request;
+%s
 
-class {{ controller }} extends Controller
+class %s extends Controller
 {
     public function index()
     {
 
     }
 
-    public function store(Request $request)
+    public function store(%s $request)
     {
 
     }
 
-    public function update(Request $request)
+    public function update(%s $request)
     {
 
     }

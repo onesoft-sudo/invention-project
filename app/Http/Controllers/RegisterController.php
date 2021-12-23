@@ -3,48 +3,47 @@
 
 namespace App\Http\Controllers;
 
-use App\Core\App;
-use App\Core\Controller;
-use App\Core\View;
+use App\Http\Middlewares\LoginMiddleware;
+use App\Http\Requests\RegisterUserRequest;
 use App\Models\User;
-use App\Models\UserLogin;
+use OSN\Framework\Core\Controller;
+use OSN\Framework\Core\View;
+use OSN\Framework\Facades\Hash;
 use OSN\Framework\Facades\Auth;
 use OSN\Framework\Facades\Request;
 use OSN\Framework\Facades\Response;
 
 class RegisterController extends Controller
 {
+    public function __construct()
+    {
+        $this->setMiddleware([LoginMiddleware::class]);
+    }
+
     public function index(): View
     {
         return $this->render('register');
     }
 
-    public function store(): View
+    public function store(RegisterUserRequest $request): View
     {
-        $user = new User();
-
-        $user->load([
-            "name" => Request::post('name'),
-            "email" => Request::post('email'),
-            "username" => Request::post('username'),
-            "password" => Request::post('password'),
-            "passwordConfirmation" => Request::post('passwordConfirmation'),
-        ]);
-
-        if (!$user->validate() || $user->isUnique() !== true || !$user->save()) {
+        if (!$request->validate()) {
             return $this->render("register", [
-                "model" => $user,
-                "errors" => $user->getErrors()
+                "request" => $request,
+                "errors" => $request->getErrors()
             ]);
         }
 
-        $user = Auth::authUser(new UserLogin([
-            "username" => $user->username,
-            "password" => $user->password
-        ]));
+        $user = User::create([
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => Hash::sha1($request->password)
+        ]);
+
+        $user = Auth::authUser($user);
 
         if ($user !== false){
-            App::session()->setFromModel($user, ["password", "passwordConfirmation"]);
             Response::redirect("/dashboard");
         }
         else {

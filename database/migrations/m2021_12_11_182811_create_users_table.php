@@ -1,23 +1,25 @@
 <?php
 
 
-use App\Core\Migration;
+use OSN\Framework\Core\Migration;
+use OSN\Framework\Database\Common\Blueprint;
+use OSN\Framework\Facades\Schema;
 
 class m2021_12_11_182811_create_users_table extends Migration
 {
-    public function safeUp($pdo)
+    public function safeUp()
     {
-        $pdo->query("CREATE TABLE users(
-            uid INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL,
-            username VARCHAR(45) NOT NULL UNIQUE,
-            email VARCHAR(45) NOT NULL UNIQUE,
-            password TEXT NOT NULL
-        );");
+        Schema::create('users', function (Blueprint $table) {
+            $table->id('uid');
+            $table->string('name')->notNull();
+            $table->string('email')->notNull()->unique();
+            $table->string('username')->notNull()->unique();
+            $table->text('password')->notNull();
+        });
     }
 
-    public function safeDown($pdo)
+    public function safeDown()
     {
-        $pdo->query("DROP TABLE users");
+        Schema::dropIfExists('users');
     }
 }

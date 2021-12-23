@@ -3,9 +3,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Core\Controller;
-use App\Core\View;
 use App\Http\Middlewares\AuthMiddleware;
+use OSN\Framework\Core\Controller;
+use OSN\Framework\Core\View;
 
 class MWController extends Controller
 {

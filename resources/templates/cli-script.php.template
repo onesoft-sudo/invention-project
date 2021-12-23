@@ -1,0 +1,13 @@
+<?php
+
+require __DIR__ . "/vendor/autoload.php";
+
+use OSN\Framework\Console\App;
+
+$app = new App(__DIR__);
+
+/**
+ * Register commands here...
+ */
+
+$app->run();

@@ -1,7 +1,7 @@
 <?php
 
-use App\Core\App;
 use App\Injectors\CSRFInjector;
+use OSN\Framework\Core\App;
 
 ?>
 <div class="row">
@@ -24,7 +24,7 @@ use App\Injectors\CSRFInjector;
             <?= new CSRFInjector(); ?>
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" <?= isset($model->name) ? "value=\"" . $model->name . "\" " : ""; ?>name="name" class="form-control<?= isset($errors["name"]) ? " is-invalid" : ""; ?>" id="name">
+                <input type="text" <?= isset($request->name) ? "value=\"" . $request->name . "\" " : ""; ?>name="name" class="form-control<?= isset($errors["name"]) ? " is-invalid" : ""; ?>" id="name">
                 <?php
                 if(isset($errors["name"])):
                     ?>
@@ -37,7 +37,7 @@ use App\Injectors\CSRFInjector;
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="text" <?= isset($model->email) ? "value=\"" . $model->email . "\" " : ""; ?>name="email" class="form-control<?= isset($errors["email"]) ? " is-invalid" : ""; ?>" id="email">
+                <input type="text" <?= isset($request->email) ? "value=\"" . $request->email . "\" " : ""; ?>name="email" class="form-control<?= isset($errors["email"]) ? " is-invalid" : ""; ?>" id="email">
                 <?php
                 if(isset($errors["email"])):
                     ?>
@@ -50,7 +50,7 @@ use App\Injectors\CSRFInjector;
             </div>
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" <?= isset($model->username) ? "value=\"" . $model->username . "\" " : ""; ?>name="username" class="form-control<?= isset($errors["username"]) ? " is-invalid" : ""; ?>" id="username">
+                <input type="text" <?= isset($request->username) ? "value=\"" . $request->username . "\" " : ""; ?>name="username" class="form-control<?= isset($errors["username"]) ? " is-invalid" : ""; ?>" id="username">
                 <?php
                 if(isset($errors["username"])):
                     ?>
@@ -75,13 +75,13 @@ use App\Injectors\CSRFInjector;
                 ?>
             </div>
             <div class="mb-3">
-                <label for="passwordConfirmation" class="form-label">Confirm Password</label>
-                <input type="password" name="passwordConfirmation" class="form-control<?= isset($errors["passwordConfirmation"]) ? " is-invalid" : ""; ?>" id="passwordConfirmation">
+                <label for="password_confirmation" class="form-label">Confirm Password</label>
+                <input type="password" name="password_confirmation" class="form-control<?= isset($errors["password_confirmation"]) ? " is-invalid" : ""; ?>" id="password_confirmation">
                 <?php
-                if(isset($errors["passwordConfirmation"])):
+                if(isset($errors["password_confirmation"])):
                     ?>
                     <div class="invalid-feedback">
-                        <?= $errors["passwordConfirmation"][array_key_first($errors["passwordConfirmation"])] ?>
+                        <?= $errors["password_confirmation"][array_key_first($errors["password_confirmation"])] ?>
                     </div>
                 <?php
                 endif;

@@ -2,10 +2,11 @@
 
 namespace App\Http\Middlewares;
 
-use App\Core\Middleware;
-use App\Core\Request;
+use OSN\Framework\Core\Middleware;
+use OSN\Framework\Exceptions\HTTPException;
 use OSN\Framework\Facades\Response;
 use OSN\Framework\Facades\Auth;
+use OSN\Framework\Http\Request;
 
 class AuthMiddleware extends Middleware
 {

@@ -1,7 +1,7 @@
 <?php
 
-use App\Core\App;
 use App\Injectors\CSRFInjector;
+use OSN\Framework\Core\App;
 
 ?>
 <div class="row">
@@ -24,7 +24,7 @@ use App\Injectors\CSRFInjector;
             <?= new CSRFInjector(); ?>
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" <?= isset($model->username) ? "value=\"" . $model->username . "\" " : ""; ?>name="username" class="form-control<?= isset($errors["username"]) ? " is-invalid" : ""; ?>" id="username">
+                <input type="text" <?= isset($request->username) ? "value=\"" . $request->username . "\" " : ""; ?>name="username" class="form-control<?= isset($errors["username"]) ? " is-invalid" : ""; ?>" id="username">
                 <?php
                     if(isset($errors["username"])):
                 ?>
