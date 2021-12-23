@@ -1,5 +1,5 @@
 {
-    "name": "osn/invention-project",
+    "name": "osn/php-mvc",
     "type": "project",
     "description": "The Invention Framework Project",
     "require": {
