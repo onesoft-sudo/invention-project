@@ -7,6 +7,7 @@ use App\Http\Requests\StoreTestFormRequest;
 use App\Models\User;
 use Database\Factories\UserFactory;
 use OSN\Framework\Core\Controller;
+use OSN\Framework\Http\Response;
 
 class TestFormController extends Controller
 {
@@ -22,7 +23,10 @@ class TestFormController extends Controller
 
     public function store(StoreTestFormRequest $request)
     {
-        dd(User::factory()->count(5)->make());
+        //dd(User::factory()->count(5)->make());
+        return new Response("404 Not Found", 404, [
+            'Content-Type' => 'text/plain'
+        ]);
     }
 
     public function update()

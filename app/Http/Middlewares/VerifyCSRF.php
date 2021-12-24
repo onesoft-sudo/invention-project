@@ -3,7 +3,7 @@
 namespace App\Http\Middlewares;
 
 use OSN\Framework\Core\Middleware;
-use App\Exceptions\HTTPException;
+use OSN\Framework\Exceptions\HTTPException;
 use OSN\Framework\Http\CSRFHelper;
 use OSN\Framework\Http\Request;
 

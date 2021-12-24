@@ -1,21 +1,16 @@
 <?php
 
-use App\Core\App;
-use App\Models\User;
-use Database\Factories\UserFactory;
-use OSN\Framework\Core\Collection;
-use OSN\Framework\Database\SQLite\Blueprint;
-use OSN\Framework\Exceptions\FactoryLimitException;
-use OSN\Framework\Facades\Auth;
-use OSN\Framework\Facades\Database;
-use OSN\Framework\Facades\Hash;
+
+use OSN\Framework\Core\App;
+use OSN\Framework\DataTypes\_String;
 
 require "../vendor/autoload.php";
 
 $app = new App("..");
 //
-$factory = (new UserFactory())->make();
-dd($factory);
+//$str = new _String('Public');
+dd(\OSN\Framework\Facades\_String::random());
+
 //$factory2 = (new UserFactory())->define();
 //
 //$user = User::create([
