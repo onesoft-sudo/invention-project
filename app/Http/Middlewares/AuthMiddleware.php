@@ -13,8 +13,7 @@ class AuthMiddleware extends Middleware
     public function handle(Request $request)
     {
         if (!Auth::isAuthenticated()) {
-            Response::redirect("/login");
-            exit();
+            return Response::redirect("/login");
         }
     }
 }

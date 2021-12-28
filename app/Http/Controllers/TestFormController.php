@@ -7,6 +7,7 @@ use App\Http\Requests\StoreTestFormRequest;
 use App\Models\User;
 use Database\Factories\UserFactory;
 use OSN\Framework\Core\Controller;
+use OSN\Framework\Http\Headers;
 use OSN\Framework\Http\Response;
 
 class TestFormController extends Controller
@@ -18,7 +19,8 @@ class TestFormController extends Controller
 
     public function index()
     {
-        return $this->render("testform");
+        return redirect('/log-in');
+        //return $this->render("testform");
     }
 
     public function store(StoreTestFormRequest $request)

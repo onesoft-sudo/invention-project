@@ -3,13 +3,14 @@
 
 use OSN\Framework\Core\App;
 use OSN\Framework\DataTypes\_String;
+use OSN\Framework\Facades\Response;
 
 require "../vendor/autoload.php";
 
 $app = new App("..");
-//
+$app->response->setCode(403);
 //$str = new _String('Public');
-dd(\OSN\Framework\Facades\_String::random());
+
 
 //$factory2 = (new UserFactory())->define();
 //
