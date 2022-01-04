@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Models\Post;
 use OSN\Framework\Core\App;
 use OSN\Framework\DataTypes\_String;
 use OSN\Framework\Facades\Response;
@@ -8,7 +9,7 @@ use OSN\Framework\Facades\Response;
 require "../vendor/autoload.php";
 
 $app = new App("..");
-$app->response->setCode(403);
+Post::factory()->count(9)->create();
 //$str = new _String('Public');
 
 

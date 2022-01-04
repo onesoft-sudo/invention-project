@@ -19,8 +19,7 @@ class TestFormController extends Controller
 
     public function index()
     {
-        return redirect('/log-in');
-        //return $this->render("testform");
+        return $this->render("testform");
     }
 
     public function store(StoreTestFormRequest $request)

@@ -6,6 +6,7 @@ namespace Database\Factories;
 
 use App\Models\User;
 use OSN\Framework\Database\Factory;
+use OSN\Framework\Facades\Hash;
 
 class UserFactory extends Factory
 {
@@ -17,7 +18,7 @@ class UserFactory extends Factory
             'name' => $this->faker->name(),
             'username' => $this->faker->userName(),
             'email' => $this->faker->email(),
-            'password' => $this->faker->password(),
+            'password' => Hash::sha1($this->faker->password()),
         ];
     }
 }

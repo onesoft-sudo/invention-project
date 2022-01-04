@@ -14,6 +14,11 @@ class %s extends Controller
 
     }
 
+    public function view(%s $request)
+    {
+
+    }
+
     public function store(%s $request)
     {
 

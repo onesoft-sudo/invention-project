@@ -8,7 +8,6 @@ use App\Http\Requests\AuthUserRequest;
 use App\Models\User;
 use OSN\Framework\Core\Controller;
 use OSN\Framework\Core\View;
-use OSN\Framework\Facades\Request;
 use OSN\Framework\Facades\Response;
 use App\Http\Middlewares\LoginMiddleware;
 use OSN\Framework\Facades\Auth;
@@ -26,7 +25,7 @@ class AuthController extends Controller
         return $this->render("auth");
     }
 
-    public function login(AuthUserRequest $request): View
+    public function login(AuthUserRequest $request)
     {
         if (!$request->validate()) {
             return $this->render("auth", [
@@ -45,20 +44,17 @@ class AuthController extends Controller
         $user = Auth::authUser($user);
 
         if ($user !== false){
-            Response::redirect("/dashboard");
+            return Response::redirect("/dashboard");
         }
         else {
             App::session()->setFlash("Incorrect username or password.");
-            Response::redirect("/login");
+            return Response::redirect("/login");
         }
-
-        exit();
     }
 
     public function logout()
     {
         Auth::destroyAuth();
-        Response::redirect("/login");
-        exit();
+        return Response::redirect("/login");
     }
 }

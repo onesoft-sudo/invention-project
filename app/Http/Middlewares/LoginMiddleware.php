@@ -12,8 +12,7 @@ class LoginMiddleware extends Middleware
     public function handle(Request $request)
     {
         if (Auth::isAuthenticated()) {
-            Response::redirect("/dashboard");
-            exit();
+            return Response::redirect("/dashboard");
         }
     }
 }

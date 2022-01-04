@@ -3,6 +3,7 @@
  * Web routes.
  */
 
+use App\Http\Controllers\APIController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
@@ -15,6 +16,7 @@ use OSN\Framework\Facades\Router;
 Router::get("/", [HomeController::class]);
 Router::get("/posts", "posts");
 Router::assignAPIController("/form", TestFormController::class);
+Router::assignAPIController("/api/v1", APIController::class);
 Router::put("/form", [TestFormController::class, "update"]);
 
 Router::get("/login", [AuthController::class]);

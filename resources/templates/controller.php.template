@@ -14,7 +14,7 @@ class %s extends Controller
 
     }
 
-    public function view()
+    public function view(%s $request)
     {
 
     }

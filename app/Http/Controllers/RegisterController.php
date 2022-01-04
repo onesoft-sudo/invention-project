@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Http\Middlewares\LoginMiddleware;
 use App\Http\Requests\RegisterUserRequest;
 use App\Models\User;
+use OSN\Framework\Core\App;
 use OSN\Framework\Core\Controller;
 use OSN\Framework\Core\View;
 use OSN\Framework\Facades\Hash;
@@ -25,7 +26,7 @@ class RegisterController extends Controller
         return $this->render('register');
     }
 
-    public function store(RegisterUserRequest $request): View
+    public function store(RegisterUserRequest $request)
     {
         if (!$request->validate()) {
             return $this->render("register", [
@@ -44,13 +45,11 @@ class RegisterController extends Controller
         $user = Auth::authUser($user);
 
         if ($user !== false){
-            Response::redirect("/dashboard");
+            return redirect("/dashboard");
         }
         else {
             App::session()->setFlash("Internal error occurred.");
-            Response::redirect("/login");
+            return redirect("/login");
         }
-
-        exit();
     }
 }

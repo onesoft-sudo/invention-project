@@ -3,11 +3,13 @@
 
 require __DIR__ . "/vendor/autoload.php";
 
-use OSN\Framework\Commands\MakeCommand;
-use OSN\Framework\Commands\MigrateCommand;
+use App\Commands\Console\MakeCommand;
+use App\Commands\Console\MigrateCommand;
+use App\Commands\Console\ServeCommand;
 use OSN\Framework\Console\App;
 
 $app = new App(__DIR__);
 $app->commander->register(MigrateCommand::class);
 $app->commander->register(MakeCommand::class);
+$app->commander->register(ServeCommand::class);
 $app->run();
