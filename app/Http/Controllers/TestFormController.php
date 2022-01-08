@@ -19,7 +19,7 @@ class TestFormController extends Controller
 
     public function index()
     {
-        return $this->render("testform");
+        return view("testform.power-test", ['e' => new \Exception('err msg', 403)]);
     }
 
     public function store(StoreTestFormRequest $request)
