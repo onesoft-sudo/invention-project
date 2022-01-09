@@ -1,8 +1,8 @@
 # ChangeLog
 
 ### 2022-01-08
-- Added Laravel-type syntax support in PowerParser (#1)
-- Fixed No way to set page title (#4)
+- Added Laravel-type syntax support in PowerParser [#1](https://github.com/onesoft-sudo/invention-project/issues/1)
+- Fixed No way to set page title [#4](https://github.com/onesoft-sudo/invention-project/issues/4)
 - Added caching in PowerParser so that the application will become faster
 - Added `HasOne`, `HasMany`, `BelongsTo`, `BelongsToMany` relationship classes
 - Added ORM
