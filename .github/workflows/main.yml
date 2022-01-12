@@ -26,4 +26,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run the test script
         run: |
-           sudo apt install mysql-community-server && sudo service mysqld start && php ./console migrate
+           sudo apt install mysql-community-server && sudo service mysql start && php ./console migrate
