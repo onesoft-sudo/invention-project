@@ -15,7 +15,7 @@ class ImageFactory extends Factory
     {
         return [
             'url' => $this->faker->url(),
-            'user_id' => round(rand(0, 1)) == 1 ? 7 : 9,
+            'user_id' => round(rand(0, 1)) == 1 ? 1 : 2,
             'created_at' => now(),
             'updated_at' => now(),
         ];

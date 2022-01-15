@@ -12,5 +12,6 @@ class HomeController extends Controller
         return $this->render("home", [
             "model" => new User(),
         ]);
+        //return response('', 200);
     }
 }

@@ -20,30 +20,67 @@ class MigrateCommand extends Command
     {
         return [
             'default' => [
-                "Apply all non-applied migrations"
+                "Apply all non-applied migrations",
+                [
+                    '-f, --force' => 'Force to complete the operation without any prompt'
+                ]
             ],
-            'rollback' => [
-                "Rollback all applied migrations"
+            'reset' => [
+                "Rollback all applied migrations and reset the database",
+                [
+                    '-f, --force' => 'Force to complete the operation without any prompt'
+                ]
+            ],
+            'rebuild' => [
+                "Reset and re-migrate the whole database",
+                [
+                    '-s, --seed' => 'Run the seeders after finishing rebuild'
+                ]
             ]
         ];
     }
 
     public function default(ArgumentCollection $args)
     {
-        if ($args->hasOption('--help')) {
-            echo("Usage: php {$args->_0} migrate[:subcommand] [options...]\n\n");
-            echo("Options:\n");
-            echo("  \033[1;33m--help\033[0m\tShow this help and exit\n\n");
-            echo("Available Subcommands:\n");
-            echo($this->renderSubcommandsList());
+        if (!parent::default($args))
             return;
-        }
 
         $this->migrations->applyAll();
     }
 
-    public function rollback(ArgumentCollection $args)
+    private static function askUser(): bool
     {
-        $this->migrations->rollbackAll();
+        echo "\033[1;33m[!]\033[0m\033[1m This will erase everything in the database!\033[0m Please type `yes' to confirm:\n";
+        $input = strtolower(trim(fgets(STDIN)));
+
+        if ($input != 'y' && $input != 'yes') {
+            echo "\033[1;33m[+]\033[0m Operation canceled by the user.";
+            return false;
+        }
+
+        return true;
+    }
+
+    public function reset(ArgumentCollection $args)
+    {
+        if (!$args->hasOption('-f') && !$args->hasOption('--force') && !self::askUser()) {
+            return ' ';
+        }
+
+        $this->migrations->reset();
+        return '';
+    }
+
+    public function rebuild(ArgumentCollection $args)
+    {
+        if($this->reset($args) === ' '){
+            return;
+        }
+
+        $this->migrations->applyAll();
+
+        if ($args->hasOption('--seed') || $args->hasOption('-s')) {
+            $this->runForeign(DBCommand::class, 'seed', $args);
+        }
     }
 }

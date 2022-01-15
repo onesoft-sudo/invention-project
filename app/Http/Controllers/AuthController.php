@@ -7,11 +7,11 @@ use OSN\Framework\Core\App;
 use App\Http\Requests\AuthUserRequest;
 use App\Models\User;
 use OSN\Framework\Core\Controller;
-use OSN\Framework\Core\View;
 use OSN\Framework\Facades\Response;
-use App\Http\Middlewares\LoginMiddleware;
+use App\Http\Middleware\LoginMiddleware;
 use OSN\Framework\Facades\Auth;
 use OSN\Framework\Facades\Hash;
+use OSN\Framework\View\View;
 
 class AuthController extends Controller
 {

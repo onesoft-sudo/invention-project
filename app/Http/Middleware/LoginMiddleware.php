@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middlewares;
+namespace App\Http\Middleware;
 
 use OSN\Framework\Core\Middleware;
 use OSN\Framework\Facades\Response;

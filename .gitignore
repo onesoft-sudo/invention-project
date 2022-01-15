@@ -1,6 +1,7 @@
 .env
 .idea/
 vendor/
+node_modules/
 framework/
 framework-helpers/
 public/test.php
@@ -9,3 +10,4 @@ var/tmp/*
 var/log/*
 var/runtime/*
 var/dumps/*
+.phpunit.result.cache

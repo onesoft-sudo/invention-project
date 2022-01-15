@@ -7,18 +7,29 @@
         "ext-pdo": "*",
         "fakerphp/faker": "^1.17",
         "ext-json": "*",
-        "symfony/var-dumper": "^5.4"
+        "symfony/var-dumper": "^5.4",
+        "phpunit/phpunit": "*"
+    },
+    "scripts": {
+        "dev": "@php ./console serve",
+        "test": "phpunit --testdox --colors=always --config ./phpunit.xml"
     },
     "license": "GPL-3.0-or-later",
     "autoload": {
         "psr-4": {
             "App\\": "app/",
             "OSN\\Framework\\": "framework/src/",
-            "Database\\Factories\\": "database/factories/"
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
         },
         "files": [
             "framework-helpers/src/mainhelper.php"
         ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
     },
     "authors": [
         {

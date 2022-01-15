@@ -3,9 +3,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Middlewares\AuthMiddleware;
+use App\Http\Middleware\AuthMiddleware;
 use OSN\Framework\Core\Controller;
-use OSN\Framework\Core\View;
 
 class MWController extends Controller
 {
@@ -14,7 +13,7 @@ class MWController extends Controller
         $this->setMiddleware([AuthMiddleware::class]);
     }
 
-    public function index(): View
+    public function index()
     {
         return $this->render("mw-test");
     }

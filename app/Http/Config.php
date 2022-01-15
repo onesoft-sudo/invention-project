@@ -2,11 +2,11 @@
 
 namespace App\Http;
 
-use App\Http\Middlewares\VerifyCSRF;
+use App\Http\Middleware\VerifyCSRF;
 
 class Config
 {
-    public array $globalMiddlewares = [
+    public static array $globalMiddlewares = [
         VerifyCSRF::class
     ];
 }

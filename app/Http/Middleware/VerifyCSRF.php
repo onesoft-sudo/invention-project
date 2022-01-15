@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middlewares;
+namespace App\Http\Middleware;
 
 use OSN\Framework\Core\Middleware;
 use OSN\Framework\Exceptions\HTTPException;
@@ -23,7 +23,7 @@ class VerifyCSRF extends Middleware
         *   rendering an error page. You can also return a View or
         *   Response object here.
         */
-        if ($request->isWriteRequest()) {
+        if ($request->isWriteRequest() && !test_env()) {
             $csrf_token = self::get();
             $csrf_request = $request->post("__csrf_token");
 

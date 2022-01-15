@@ -1,3 +1,4 @@
+:section('main')
 <?php
 
 use App\Injectors\CSRFInjector;
@@ -21,7 +22,7 @@ use OSN\Framework\Core\App;
         ?>
         <br>
         <form action="" method="post">
-            <?= new CSRFInjector(); ?>
+            :csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" <?= isset($request->name) ? "value=\"" . $request->name . "\" " : ""; ?>name="name" class="form-control<?= isset($errors["name"]) ? " is-invalid" : ""; ?>" id="name">
@@ -91,3 +92,5 @@ use OSN\Framework\Core\App;
         </form>
     </div>
 </div>
+
+:endsection

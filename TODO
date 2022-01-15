@@ -4,7 +4,10 @@
 - Implement factories
 - Fix models
 - Add command-line support
-
 + Implement seeders
-+ Implement resources
 + Fix commands
+
++ Implement ORM
++ Implement Caching
++ Implement resources
++ Create a base App class

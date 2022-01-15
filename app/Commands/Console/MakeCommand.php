@@ -24,6 +24,13 @@ class MakeCommand extends Command
             'request',
             'factory',
             'model',
+            'middleware',
+            'seeder',
+            'cliScript',
+            'exception',
+            'command',
+            'initializer',
+            'test',
         ], 1);
     }
 
@@ -66,20 +73,30 @@ class MakeCommand extends Command
                 null,
                 "<request_name>"
             ],
+            'test' => [
+                "Generate a PHPUnit test class",
+                null,
+                "<test_name>"
+            ],
             'middleware' => [
                 "Generate an HTTP middleware class",
                 null,
                 "<middleware_name>"
             ],
-            'injector' => [
-                "Generate an injector class",
+            'seeder' => [
+                "Generate a database seeder class",
                 null,
-                "<injector_name>"
+                "<seeder_name>"
             ],
             'command' => [
                 "Generate a command class",
                 null,
                 "<command_name>"
+            ],
+            'initializer' => [
+                "Generate an initializer class",
+                null,
+                "<initializer_name>"
             ],
             'cliScript' => [
                 "Generate a new PHP CLI script",
@@ -96,14 +113,8 @@ class MakeCommand extends Command
 
     public function default(ArgumentCollection $args)
     {
-        if ($args->hasOption('--help')) {
-            echo("Usage: php {$args->_0} make:<subcommand> [options...]\n\n");
-            echo("Options:\n");
-            echo("  \033[1;33m--help\033[0m\tShow this help and exit\n\n");
-            echo("Available Subcommands:\n");
-            echo($this->renderSubcommandsList());
+        if (!parent::default($args))
             return;
-        }
 
         echo('This command must be invoked with a subcommand or option.');
         exit(1);
@@ -124,6 +135,13 @@ class MakeCommand extends Command
         return "Request created: $name";
     }
 
+    public function test(ArgumentCollection $args)
+    {
+        $name = $args->getArgNoOption(2);
+        $this->app->generator->generate($this->app->config["root_dir"] . "/tests/{$name}.php", 'test.php', $name);
+        return "Test created: $name";
+    }
+
     public function exception(ArgumentCollection $args)
     {
         $name = $args->getArgNoOption(2);
@@ -131,18 +149,18 @@ class MakeCommand extends Command
         return "Exception created: $name";
     }
 
-    public function injector(ArgumentCollection $args)
-    {
-        $name = $args->getArgNoOption(2);
-        $this->app->generator->generate($this->app->config["root_dir"] . "/app/Injectors/{$name}.php", 'injector.php', $name);
-        return "Injector created: $name";
-    }
-
     public function command(ArgumentCollection $args)
     {
         $name = $args->getArgNoOption(2);
         $this->app->generator->generate($this->app->config["root_dir"] . "/app/Commands/{$name}.php", 'command.php', $name);
         return "Command created: $name";
+    }
+
+    public function initializer(ArgumentCollection $args)
+    {
+        $name = $args->getArgNoOption(2);
+        $this->app->generator->generate($this->app->config["root_dir"] . "/app/Initializers/{$name}.php", 'initializer.php', $name);
+        return "Initializer created: $name";
     }
 
     public function cliScript(ArgumentCollection $args)
@@ -155,8 +173,15 @@ class MakeCommand extends Command
     public function middleware(ArgumentCollection $args)
     {
         $name = $args->getArgNoOption(2);
-        $this->app->generator->generate($this->app->config["root_dir"] . "/app/Http/Middlewares/{$name}.php", 'middleware.php', $name);
+        $this->app->generator->generate($this->app->config["root_dir"] . "/app/Http/Middleware/{$name}.php", 'middleware.php', $name);
         return "Middleware created: $name";
+    }
+
+    public function seeder(ArgumentCollection $args)
+    {
+        $name = $args->getArgNoOption(2);
+        $this->app->generator->generate($this->app->config["root_dir"] . "/database/seeders/{$name}.php", 'seeder.php', $name);
+        return "Seeder created: $name";
     }
 
     public function factory(ArgumentCollection $args)

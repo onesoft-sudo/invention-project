@@ -1,5 +1,15 @@
 # ChangeLog
 
+### 2022-01-15
+- Fixed `BelongsToMany` Relationship
+- Initialized project with `npm`
+- Added `PHPUnit` tests support
+- Updated commands
+- Added Initializers
+- Added config support
+- Updated Environment Variables
+- Minor updates and fixes
+
 ### 2022-01-08
 - Added Laravel-type syntax support in PowerParser [#1](https://github.com/onesoft-sudo/invention-project/issues/1)
 - Fixed No way to set page title [#4](https://github.com/onesoft-sudo/invention-project/issues/4)

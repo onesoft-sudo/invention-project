@@ -3,12 +3,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Middlewares\LoginMiddleware;
+use App\Http\Middleware\LoginMiddleware;
 use App\Http\Requests\RegisterUserRequest;
 use App\Models\User;
 use OSN\Framework\Core\App;
 use OSN\Framework\Core\Controller;
-use OSN\Framework\Core\View;
 use OSN\Framework\Facades\Hash;
 use OSN\Framework\Facades\Auth;
 use OSN\Framework\Facades\Request;
@@ -21,7 +20,7 @@ class RegisterController extends Controller
         $this->setMiddleware([LoginMiddleware::class]);
     }
 
-    public function index(): View
+    public function index()
     {
         return $this->render('register');
     }

@@ -5,14 +5,13 @@
  */
 
 return [
-    'env' => '.env',
+    "layout" => "layouts/main",
     'components' => [
         'db' => [
             'database_config' => null
-        ],
-        'urlManager' => [
-            'pretty_urls' => true,
-            'array_to_json' => true
         ]
+    ],
+    'initializers' => [
+        \App\Initializers\AppInitializer::class,
     ]
 ];

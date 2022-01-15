@@ -14,12 +14,12 @@
     <div class="container">
         <div class="row mt-2">
             <div class="col">
-                :getSection('main')
+                :yield('main')
             </div>
         </div>
     </div>
     <div>
-        :getSection('bottom')
+        :yield('bottom')
     </div>
 </body>
 </html>

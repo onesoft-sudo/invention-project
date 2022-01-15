@@ -18,6 +18,7 @@ class PostFactory extends Factory
             "content" => $this->faker->paragraph(10),
             "created_at" => now(),
             "updated_at" => now(),
+            "user_id" => round(rand(0, 1)) == 1 ? 1 : 2
         ];
     }
 }
