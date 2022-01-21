@@ -8,7 +8,8 @@
         "fakerphp/faker": "^1.17",
         "ext-json": "*",
         "symfony/var-dumper": "^5.4",
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "*",
+        "ext-zlib": "*"
     },
     "scripts": {
         "dev": "@php ./console serve",
