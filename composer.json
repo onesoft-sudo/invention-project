@@ -3,7 +3,7 @@
     "type": "project",
     "description": "The Invention Framework Project",
     "require": {
-        "vlucas/phpdotenv": "*",
+        "vlucas/phpdotenv": "^5.4",
         "ext-pdo": "*",
         "fakerphp/faker": "^1.17",
         "ext-json": "*",
