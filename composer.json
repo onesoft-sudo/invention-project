@@ -3,13 +3,12 @@
     "type": "project",
     "description": "The Invention Framework Project",
     "require": {
-        "osn/envoy": "^1.0",
+        "vlucas/phpdotenv": "*",
         "ext-pdo": "*",
         "fakerphp/faker": "^1.17",
         "ext-json": "*",
         "symfony/var-dumper": "^5.4",
-        "phpunit/phpunit": "*",
-        "ext-zlib": "*"
+        "phpunit/phpunit": "^9.3"
     },
     "scripts": {
         "dev": "@php ./console serve",
