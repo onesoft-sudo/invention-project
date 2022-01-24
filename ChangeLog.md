@@ -1,5 +1,9 @@
 # ChangeLog
 
+### 2022-01-24
+- Fixed security vulnerabilities in npm dependencies
+- Bumped fakerphp/faker from 1.17.0 to 1.18.0
+
 ### 2022-01-15
 - Fixed `BelongsToMany` Relationship
 - Initialized project with `npm`
