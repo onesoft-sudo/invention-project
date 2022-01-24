@@ -5,7 +5,7 @@
     "require": {
         "vlucas/phpdotenv": "^5.4",
         "ext-pdo": "*",
-        "fakerphp/faker": "^1.17",
+        "fakerphp/faker": "^1.18",
         "ext-json": "*",
         "symfony/var-dumper": "^5.4",
         "phpunit/phpunit": "^9.3"
