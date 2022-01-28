@@ -4,3 +4,6 @@
 
 
 The invention project skeleton repository.
+
+### Support
+- Email: invention@onesoftnet.ml
