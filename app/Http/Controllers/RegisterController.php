@@ -47,7 +47,7 @@ class RegisterController extends Controller
             return redirect("/dashboard");
         }
         else {
-            App::session()->setFlash("Internal error occurred.");
+            App::session()->setFlash('error', "Internal error occurred.");
             return redirect("/login");
         }
     }

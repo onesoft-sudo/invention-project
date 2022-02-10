@@ -11,6 +11,7 @@ use OSN\Framework\Facades\Hash;
 use OSN\Framework\ORM\Relationships\BelongsToMany;
 use OSN\Framework\ORM\Relationships\HasMany;
 use OSN\Framework\ORM\Relationships\HasOne;
+use OSN\Framework\ORM\Relationships\Polymorphic\MorphOne;
 
 class User extends Model
 {
@@ -39,9 +40,9 @@ class User extends Model
         return $this->hasOne(Post::class)->last();
     }
 
-    public function image(): HasOne
+    public function image(): MorphOne
     {
-        return $this->hasOne(Image::class);
+        return $this->morphOne(Image::class);
     }
 
     public function tags(): BelongsToMany

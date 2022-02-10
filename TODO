@@ -6,8 +6,15 @@
 - Add command-line support
 + Implement seeders
 + Fix commands
-
+------------------------------------------------------
 + Implement ORM
++ Fix Commands
++ Add support for `Accept: application/json` and `Accept: application/xml`
++ Implement Validation
 + Implement Caching
 + Implement resources
 + Create a base App class
++ Implement Policies
++ Implement Events
++ Implement Mails
++ Implement Macros

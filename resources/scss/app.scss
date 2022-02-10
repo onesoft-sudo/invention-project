@@ -1,1 +1,37 @@
 @import "~bootstrap";
+
+.btn-custom {
+    @extend .btn-primary;
+
+    background: rgba(0, 123, 255, 0.2);
+    color: $primary;
+
+    &:hover {
+        @extend .btn-primary:hover;
+
+        background: rgba(0, 123, 255, 0.33);
+        color: $primary;
+    }
+}
+
+.form-control, .is-invalid {
+    box-shadow: none;
+
+    &:focus {
+        border: 2px solid $primary;
+        box-shadow: none;
+    }
+}
+
+.form-control:invalid, .is-invalid {
+    border: 1px solid $danger;
+    transition: 0.1s;
+
+    &:focus {
+        border: 2px solid $danger;
+    }
+}
+
+.form-control:focus, .form-control:invalid, .is-invalid:focus {
+    box-shadow: none !important;
+}

@@ -1,7 +1,7 @@
-:section('main')
+:title('Login - Invention'):
+:section('main'):
 <?php
 
-use App\Injectors\CSRFInjector;
 use OSN\Framework\Core\App;
 
 ?>
@@ -10,9 +10,9 @@ use OSN\Framework\Core\App;
         <h1>Login</h1>
         <br>
         <?php
-            $msg = App::session()->getFlash();
+            $msg = App::session()->getFlash('error');
 
-            if($msg !== '' && $msg !== false) {
+            if($msg !== '' && $msg !== null) {
         ?>
                 <div class="alert alert-danger bg-danger text-light">
                     <?= $msg ?>
@@ -22,10 +22,10 @@ use OSN\Framework\Core\App;
         ?>
         <br>
         <form action="" method="post">
-            :csrf
+            :csrf:
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" <?= isset($request->username) ? "value=\"" . $request->username . "\" " : ""; ?>name="username" class="form-control<?= isset($errors["username"]) ? " is-invalid" : ""; ?>" id="username">
+                <input type="text" <?= request()->has('username') ? "value=\"" . request()->username . "\" " : ""; ?>name="username" class="form-control<?= isset($errors["username"]) ? " is-invalid" : ""; ?>" id="username">
                 <?php
                     if(isset($errors["username"])):
                 ?>
@@ -57,4 +57,4 @@ use OSN\Framework\Core\App;
         </form>
     </div>
 </div>
-:endsection
+:endsection:

@@ -2,5 +2,5 @@
 /** @var string $uri */
 /** @var string $method */
 ?>
-<h1>405 Method Not Allowed</h1>
-<p>The requested method <?= strtoupper($method); ?> is not allowed for the URL <?= $uri ?>.</p>
+<h1>406 Not Acceptable</h1>
+<p>The given data was invalid or corrupted.</p>

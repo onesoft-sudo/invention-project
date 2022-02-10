@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The main config file of the application.
  */
@@ -13,5 +12,6 @@ return [
     ],
     'initializers' => [
         \App\Initializers\AppInitializer::class,
+        \App\Initializers\RouteInitializer::class,
     ]
 ];

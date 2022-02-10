@@ -7,17 +7,20 @@ use App\Commands\Console\ClearCommand;
 use App\Commands\Console\DBCommand;
 use App\Commands\Console\DefaultCommand;
 use App\Commands\Console\MakeCommand;
-use App\Commands\Console\MigrateCommand;
+use App\Commands\Console\Migrate\MigrateCommand;
+use App\Commands\Console\Migrate\RebuildCommand;
+use App\Commands\Console\Migrate\ResetCommand;
 use App\Commands\Console\ServeCommand;
 use OSN\Framework\Console\App;
 
 $app = new App(__DIR__);
-
-$app->commander->register("migrate", MigrateCommand::class);
-$app->commander->register("make", MakeCommand::class);
-$app->commander->register("serve", ServeCommand::class);
-$app->commander->register("clear", ClearCommand::class);
-$app->commander->register("db", DBCommand::class);
-$app->commander->registerDefault(DefaultCommand::class);
+//
+$app->add(new MigrateCommand());
+$app->add(new RebuildCommand());
+$app->add(new ResetCommand());
+//$app->add(new MakeCommand());
+$app->add(new ServeCommand());
+//$app->add(new ClearCommand());
+//$app->add(new DBCommand());
 
 $app->run();

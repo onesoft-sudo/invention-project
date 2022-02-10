@@ -1,7 +1,6 @@
-:section('main')
+:section('main'):
 <?php
 
-use App\Injectors\CSRFInjector;
 use OSN\Framework\Core\App;
 
 ?>
@@ -10,9 +9,9 @@ use OSN\Framework\Core\App;
         <h1>Register</h1>
         <br>
         <?php
-        $msg = App::session()->getFlash();
+        $msg = App::session()->getFlash('error');
 
-        if($msg !== '' && $msg !== false) {
+        if($msg !== '' && $msg !== null) {
             ?>
             <div class="alert alert-danger bg-danger text-light">
                 <?= $msg ?>
@@ -22,7 +21,7 @@ use OSN\Framework\Core\App;
         ?>
         <br>
         <form action="" method="post">
-            :csrf
+            :csrf:
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" <?= isset($request->name) ? "value=\"" . $request->name . "\" " : ""; ?>name="name" class="form-control<?= isset($errors["name"]) ? " is-invalid" : ""; ?>" id="name">
@@ -93,4 +92,4 @@ use OSN\Framework\Core\App;
     </div>
 </div>
 
-:endsection
+:endsection:

@@ -20,7 +20,7 @@ class AuthController extends Controller
         $this->setMiddleware([LoginMiddleware::class], ["index", "login"]);
     }
 
-    public function index(): View
+    public function index()
     {
         return $this->render("auth");
     }
@@ -47,7 +47,7 @@ class AuthController extends Controller
             return Response::redirect("/dashboard");
         }
         else {
-            App::session()->setFlash("Incorrect username or password.");
+            App::session()->setFlash('error', "Incorrect username or password.");
             return Response::redirect("/login");
         }
     }

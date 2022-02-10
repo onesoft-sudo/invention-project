@@ -1,18 +1,21 @@
 {
-    "name": "osn/php-mvc",
+    "name": "osn/invention",
     "type": "project",
     "description": "The Invention Framework Project",
     "require": {
-        "vlucas/phpdotenv": "^5.4",
-        "ext-pdo": "*",
-        "fakerphp/faker": "^1.18",
         "ext-json": "*",
+        "ext-pdo": "*",
+        "vlucas/phpdotenv": "^5.4",
+        "fakerphp/faker": "^1.18",
         "symfony/var-dumper": "^5.4",
-        "phpunit/phpunit": "^9.3"
+        "phpunit/phpunit": "^9.3",
+        "monolog/monolog": "^2.3",
+        "symfony/console": "^5.4",
+        "nesbot/carbon": "^2.56"
     },
     "scripts": {
         "dev": "@php ./console serve",
-        "test": "phpunit --testdox --colors=always --config ./phpunit.xml"
+        "test": "phpunit --colors=always"
     },
     "license": "GPL-3.0-or-later",
     "autoload": {
@@ -23,7 +26,7 @@
             "Database\\Seeders\\": "database/seeders/"
         },
         "files": [
-            "framework-helpers/src/mainhelper.php"
+            "framework/helpers/helpers.php"
         ]
     },
     "autoload-dev": {

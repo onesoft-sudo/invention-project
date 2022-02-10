@@ -4,25 +4,22 @@
 namespace App\Commands\Console;
 
 
-use OSN\Framework\Console\ArgumentCollection;
-use OSN\Framework\Console\Command;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 
 class ServeCommand extends Command
 {
-    public function subcommandsDescription(): array
+    protected static $defaultName = "serve";
+    protected static $defaultDescription = "Starts PHP's built-in local development server";
+
+    protected function configure()
     {
-        return [
-            'default' => [
-                "Start a development server locally",
-            ]
-        ];
+        $this->setHelp("Starts PHP's built-in local development server.");
     }
 
-    public function default(ArgumentCollection $args)
+    protected function execute(InputInterface $input, OutputInterface $output)
     {
-        if (!parent::default($args))
-            return;
-
-        system("php -S localhost:" . env('SERVER_PORT') . " -t ./public");
+        return system("php -S localhost:" . env('SERVER_PORT') . " -t ./public");
     }
 }

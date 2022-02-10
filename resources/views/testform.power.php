@@ -1,4 +1,4 @@
-:section('main')
+:section('main'):
 <?php
 
 use App\Injectors\HTTPMethodInjector;
@@ -9,8 +9,8 @@ use App\Injectors\HTTPMethodInjector;
         <h1>Test Form</h1>
 
         <form action="<?= $this->getURI(); ?>" method="post">
-            :csrf
-            :method('PUT')
+            :csrf:
+            :method('PUT'):
             <div class="form-group mb-2">
                 <label for="i1">Name</label>
                 <input type="text" name="name" id="i1" class="form-control">
@@ -29,4 +29,4 @@ use App\Injectors\HTTPMethodInjector;
         </form>
     </div>
 </div>
-:endsection
+:endsection:

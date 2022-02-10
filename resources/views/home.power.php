@@ -1,4 +1,4 @@
-:section('main')
+:section('main'):
 <h1>Welcome!</h1>
 <a href="/form" class="btn btn-primary">Form</a>
 <a href="/api/v1" class="btn btn-primary">API v1</a>
@@ -10,4 +10,4 @@
     echo "</pre>";
     ?>
 </div>
-:endsection
+:endsection:

@@ -13,6 +13,7 @@ class m2021_12_29_132427_create_posts_table extends Migration
             $table->string('caption');
             $table->text('content');
             $table->timestamps();
+            $table->foreignIdsFor([\App\Models\User::class, \App\Models\Image::class]);
         });
     }
 

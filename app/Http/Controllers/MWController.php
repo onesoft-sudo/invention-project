@@ -15,7 +15,7 @@ class MWController extends Controller
 
     public function index()
     {
-        return $this->render("mw-test");
+        return view("mw-test");
     }
 
     public function login()

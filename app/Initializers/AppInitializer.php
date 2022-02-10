@@ -4,7 +4,15 @@
 namespace App\Initializers;
 
 
+use App\CreditPaymentGateway;
+use App\EventHandlers\OnAppRunComplete;
+use App\Events\AppRunningCompleteEvent;
+use App\BankPaymentGateway;
+use App\PaymentGatewayContract;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 use OSN\Framework\Core\Initializer;
+use OSN\Framework\Events\BuiltIn\AppRunCompleteEvent;
 
 class AppInitializer extends Initializer
 {
@@ -26,7 +34,15 @@ class AppInitializer extends Initializer
      */
     public function init()
     {
+        $this->app->on(AppRunCompleteEvent::class, function ($e) {
+            $logger = new Logger('app');
+            $logger->pushHandler(new StreamHandler(basepath('/var/log/app.log')));
+            $logger->info(request()->method . " " . request()->uri . " " . request()->protocol . " - " . response()->getCode() . " " . response()->getStatusText());
+        });
 
+        $this->app->bindOnce(PaymentGatewayContract::class, function () {
+            return new CreditPaymentGateway('EUR');
+        });
     }
 
     /**
