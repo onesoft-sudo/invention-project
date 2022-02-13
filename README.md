@@ -7,7 +7,7 @@ The invention project skeleton repository.
 
 **Note**: This project is currently in development. It is not recommended to use this in production until a stable version gets released.
 
-![Progress](https://progress-bar.dev/63?title=Development)
+![Progress](https://progress-bar.dev/65?title=Development)
 
 ### Support
 - Email: invention@onesoftnet.ml
