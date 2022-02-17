@@ -9,6 +9,7 @@ The invention project skeleton repository.
 
 ![Progress](https://progress-bar.dev/75?title=Development)
 
+
 ### Creating an Invention-Based Project
 You can use [Composer](https://getcomposer.org) to create a project based on this framework:
 
