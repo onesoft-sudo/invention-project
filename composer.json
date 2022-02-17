@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "@php ./console serve",
         "test": "phpunit --colors=always",
-        "post-archive-cmd": "cp .env.example .env"
+        "post-create-project-cmd": "cp .env.example .env"
     },
     "license": "GPL-3.0-or-later",
     "autoload": {
