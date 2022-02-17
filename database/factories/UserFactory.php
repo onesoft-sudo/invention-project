@@ -21,4 +21,13 @@ class UserFactory extends Factory
             'password' => Hash::sha1($this->faker->password()),
         ];
     }
+
+    public function suspended(): self
+    {
+        return $this->state(function ($attrs) {
+            return [
+                'user_token' => 'emu7',
+            ];
+        });
+    }
 }

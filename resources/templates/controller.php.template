@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 
 use OSN\Framework\Core\Controller;
 use OSN\Framework\Http\Request;
-%s
 
 class %s extends Controller
 {
@@ -14,7 +13,7 @@ class %s extends Controller
 
     }
 
-    public function view(%s $request)
+    public function view($id)
     {
 
     }
@@ -24,22 +23,22 @@ class %s extends Controller
 
     }
 
-    public function store(%s $request)
+    public function store(Request $request, $id)
     {
 
     }
 
-    public function edit()
+    public function edit($id)
     {
 
     }
 
-    public function update(%s $request)
+    public function update(Request $request, $id)
     {
 
     }
 
-    public function delete(Request $request)
+    public function delete($id)
     {
 
     }

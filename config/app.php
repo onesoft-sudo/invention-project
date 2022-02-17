@@ -5,13 +5,11 @@
 
 return [
     "layout" => "layouts/main",
-    'components' => [
-        'db' => [
-            'database_config' => null
-        ]
-    ],
+    "env" => false,
+    "bindings" => require __DIR__ . "/bindings.php",
     'initializers' => [
         \App\Initializers\AppInitializer::class,
+        \App\Initializers\EventInitializer::class,
         \App\Initializers\RouteInitializer::class,
     ]
 ];

@@ -7,7 +7,7 @@
 
     <div class="row mb-3">
         <div class="col-md-6">
-            <form action="{{ route('api.index') }}" method="post" novalidate>
+            <form action="{{ route('api.index', 5) }}" method="post" novalidate>
                 :csrf:
 
                 <div class="form-group">
@@ -43,4 +43,6 @@
             </div>
         </div>
     </div>
+
+
 :endsection:

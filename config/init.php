@@ -1,4 +1,5 @@
 <?php
-    return [
-        'eval' => false
-    ];
+
+return [
+    'eval' => false
+];

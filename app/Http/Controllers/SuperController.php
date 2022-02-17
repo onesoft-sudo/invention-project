@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use OSN\Framework\Core\Controller;
 use OSN\Framework\Http\Request;
 
-class %s extends Controller
+class SuperController extends Controller
 {
     public function index()
     {
@@ -18,7 +18,17 @@ class %s extends Controller
 
     }
 
+    public function create()
+    {
+
+    }
+
     public function store(Request $request, $id)
+    {
+
+    }
+
+    public function edit($id)
     {
 
     }

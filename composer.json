@@ -5,13 +5,15 @@
     "require": {
         "ext-json": "*",
         "ext-pdo": "*",
+        "php": "^8.0|^7.4",
         "vlucas/phpdotenv": "^5.4",
         "fakerphp/faker": "^1.18",
         "symfony/var-dumper": "^5.4",
         "phpunit/phpunit": "^9.3",
         "monolog/monolog": "^2.3",
         "symfony/console": "^5.4",
-        "nesbot/carbon": "^2.56"
+        "nesbot/carbon": "^2.56",
+        "psr/container": "^2.0"
     },
     "scripts": {
         "dev": "@php ./console serve",

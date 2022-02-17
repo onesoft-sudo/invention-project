@@ -34,15 +34,9 @@ class AppInitializer extends Initializer
      */
     public function init()
     {
-        $this->app->on(AppRunCompleteEvent::class, function ($e) {
-            $logger = new Logger('app');
-            $logger->pushHandler(new StreamHandler(basepath('/var/log/app.log')));
-            $logger->info(request()->method . " " . request()->uri . " " . request()->protocol . " - " . response()->getCode() . " " . response()->getStatusText());
-        });
-
-        $this->app->bindOnce(PaymentGatewayContract::class, function () {
-            return new CreditPaymentGateway('EUR');
-        });
+//        $this->app->bindOnce(PaymentGatewayContract::class, function () {
+//            return new CreditPaymentGateway('EUR');
+//        });
     }
 
     /**
