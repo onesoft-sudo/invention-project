@@ -7,6 +7,5 @@ public/test.php
 .phpunit.result.cache
 phpdoc.xml
 docs/
-cache/
 doctum.config.php
 composer.lock
