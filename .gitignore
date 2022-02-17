@@ -15,3 +15,4 @@ phpdoc.xml
 docs/
 cache/
 doctum.config.php
+composer.lock
