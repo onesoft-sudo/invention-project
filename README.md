@@ -26,5 +26,8 @@ composer require osn/invention-framework:dev-main
 ### Next Steps
 After the installation, you should edit the `.env` file and adjust your app's settings.
 
+## Contributing
+Thank you for deciding to help us! You can submit your code by creating a pull request. Your code must pass the workflow checks and tests!
+
 ### Support
 - Email: invention@onesoftnet.ml
