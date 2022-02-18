@@ -27,6 +27,7 @@
         }
     ],
     "require": {
+        "php": ">=8.0",
         "osn/invention-framework": "dev-main"
     },
     "require-dev": {

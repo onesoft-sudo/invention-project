@@ -3,9 +3,7 @@
 .vscode/
 vendor/
 node_modules/
-public/test.php
 .phpunit.result.cache
 phpdoc.xml
 docs/
 doctum.config.php
-composer.lock

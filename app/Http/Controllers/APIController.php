@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use App\CreditPaymentGateway;
 use App\Models\User;
 use App\PaymentGatewayContract;
-use OSN\Framework\Cache\Cache;
+use OSN\Framework\Facades\Cache;
 use OSN\Framework\Core\Controller;
 use OSN\Framework\Http\Request;
 
@@ -14,7 +14,7 @@ class APIController extends Controller
 {
     public function index(Request $request, PaymentGatewayContract $contract)
     {
-
+        return view('api.index');
     }
 
     public function view(Request $request)

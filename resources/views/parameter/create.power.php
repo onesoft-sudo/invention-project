@@ -3,6 +3,7 @@
 
 :section('main'):
 <h1>Create Parameter</h1>
+{{ session()->getFlash('msg') }}
 <br>
 <form action="{{ route('parameter.store') }}" method="post">
     :csrf:

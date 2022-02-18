@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Models\Param;
 use App\Models\User;
 use OSN\Framework\Core\Controller;
+use OSN\Framework\Core\Session;
 use OSN\Framework\Http\Request;
 
 class ParameterController extends Controller
@@ -49,16 +50,19 @@ class ParameterController extends Controller
      *
      * @return mixed
      */
-    public function store(Request $request)
+    public function store(Request $request, Session $session)
     {
         $request->validate([
             'content' => ['required', 'min:5']
         ], true);
 
-        return Param::create([
+        Param::create([
             'content' => $request->content,
             'user_id' => 1
         ]);
+
+        $session->setFlash("msg", "Created 201");
+        return redirect(route('parameter.create'));
     }
 
     /**
