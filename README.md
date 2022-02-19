@@ -6,6 +6,7 @@
 The invention project skeleton repository. 
 
 **Note**: This project is currently in development. It is not recommended to use this in production until a stable version gets released.
+
 **Framework Repo**: [https://github.com/onesoft-sudo/invention-framework](https://github.com/onesoft-sudo/invention-framework)
 
 ## Installation
