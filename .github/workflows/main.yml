@@ -15,7 +15,7 @@ on:
 
 env:
   DB_VENDOR: sqlite
-  DB_NAME: ${{ env.GITHUB_WORKSPACE }}/storage/databse.db
+  DB_NAME: /storage/databse.db
   APP_ENV: dev
   CONF_FILE: config/app.php
   SERVER_PORT: 80
@@ -43,7 +43,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Prepare project
-        run: cp $GITHUB_WORKSPACE/.env.example .env && touch $GITHUB_WORKSPACE/storage/database.db && W=$(echo $GITHUB_WORKSPACE | sed 's/\//\\\//g') && (cat $GITHUB_WORKSPACE/.env | sed 's/DB_NAME \= .*/DB_NAME='$W'\/storage\/database\.db/') > $GITHUB_WORKSPACE/.env
+        run: export DB_NAME=${GITHUB_WORKSPACE}${DB_NAME} && cp $GITHUB_WORKSPACE/.env.example .env && touch $GITHUB_WORKSPACE/storage/database.db && W=$(echo $GITHUB_WORKSPACE | sed 's/\//\\\//g') && (cat $GITHUB_WORKSPACE/.env | sed 's/DB_NAME \= .*/DB_NAME='$W'\/storage\/database\.db/') > $GITHUB_WORKSPACE/.env
          
       - name: Print the whole .env file
         run: cat $GITHUB_WORKSPACE/.env
