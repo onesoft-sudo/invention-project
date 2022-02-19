@@ -13,6 +13,13 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  DB_VENDOR: sqlite
+  DB_NAME: ${{ env.GITHUB_WORKSPACE }}/storage/databse.db
+  APP_ENV: dev
+  CONF_FILE: config/app.php
+  SERVER_PORT: 80
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
