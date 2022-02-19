@@ -36,10 +36,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Prepare project
-        run: |
-           cp $GITHUB_WORKSPACE/.env.example .env &&
-           touch $GITHUB_WORKSPACE/storage/database.db &&
-           (cat $GITHUB_WORKSPACE/.env | sed 's/DB_NAME \= .*/DB_NAME='$GITHUB_WORKSPACE'\/storage\/database\.db/') > $GITHUB_WORKSPACE/.env
+        run: cp $GITHUB_WORKSPACE/.env.example .env && touch $GITHUB_WORKSPACE/storage/database.db && W=$(echo $GITHUB_WORKSPACE | sed 's/\//\\\//g') && (cat $GITHUB_WORKSPACE/.env | sed 's/DB_NAME \= .*/DB_NAME='$W'\/storage\/database\.db/') > $GITHUB_WORKSPACE/.env
          
       - name: Run migrations
         run: php console migrate
