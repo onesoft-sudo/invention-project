@@ -38,6 +38,9 @@ jobs:
       - name: Prepare project
         run: cp $GITHUB_WORKSPACE/.env.example .env && touch $GITHUB_WORKSPACE/storage/database.db && W=$(echo $GITHUB_WORKSPACE | sed 's/\//\\\//g') && (cat $GITHUB_WORKSPACE/.env | sed 's/DB_NAME \= .*/DB_NAME='$W'\/storage\/database\.db/') > $GITHUB_WORKSPACE/.env
          
+      - name: Print the whole .env file
+        run: cat $GITHUB_WORKSPACE/.env
+        
       - name: Run migrations
         run: php console migrate
            
