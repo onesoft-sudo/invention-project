@@ -4,7 +4,9 @@
 namespace App\Http\Controllers;
 
 use App\CreditPaymentGateway;
+use App\Models\Post;
 use App\Models\User;
+use App\Models\Video;
 use App\PaymentGatewayContract;
 use OSN\Framework\Facades\Cache;
 use OSN\Framework\Core\Controller;
@@ -14,7 +16,8 @@ class APIController extends Controller
 {
     public function index(Request $request, PaymentGatewayContract $contract)
     {
-        return view('api.index');
+        $post = Video::find(2);
+        return $post->comments;
     }
 
     public function view(Request $request)

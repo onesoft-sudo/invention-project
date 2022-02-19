@@ -27,4 +27,9 @@ class Post extends Model
     {
         return $this->morphOne(Image::class);
     }
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class);
+    }
 }

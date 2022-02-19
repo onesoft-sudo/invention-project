@@ -6,7 +6,6 @@ namespace App\Commands\Console\Make;
 
 use OSN\Framework\Console\Generator;
 use OSN\Framework\Console\Migrations;
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -16,14 +15,6 @@ class ControllerCommand extends Command
 {
     protected static $defaultName = "make:controller";
     protected static $defaultDescription = "Generate a new controller class";
-
-    protected Generator $generator;
-
-    public function __construct()
-    {
-        $this->generator = new Generator();
-        parent::__construct();
-    }
 
     protected function configure()
     {
@@ -47,6 +38,7 @@ class ControllerCommand extends Command
             $output->writeln("<info>Controller created</info>: $name");
         }, function ($e) use ($name, $output) {
             $output->writeln("<error>Cannot generate controller</error>: $name.php: <comment>$e</comment>");
+            exit(-1);
         }, $name);
 
         return 0;

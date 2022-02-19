@@ -8,36 +8,78 @@ use OSN\Framework\Http\Request;
 
 class %s extends Controller
 {
+    /**
+     * Show a listing of the resource.
+     *
+     * @return mixed
+     */
     public function index()
     {
 
     }
 
+    /**
+     * View a specific resource.
+     *
+     * @param string $id
+     * @return mixed
+     */
     public function view($id)
     {
 
     }
 
+    /**
+     * Show the form to the user for creating a new resource.
+     *
+     * @return mixed
+     */
     public function create()
     {
 
     }
 
+    /**
+     * Store a newly created resource from the user input.
+     *
+     * @param Request $request
+     * @param string $id
+     * @return mixed
+     */
     public function store(Request $request, $id)
     {
 
     }
 
+    /**
+     * Show the form to the user for editing a specific resource.
+     *
+     * @param string $id
+     * @return mixed
+     */
     public function edit($id)
     {
 
     }
 
+    /**
+     * Update a specific resource from the user input.
+     *
+     * @param Request $request
+     * @param string $id
+     * @return mixed
+     */
     public function update(Request $request, $id)
     {
 
     }
 
+    /**
+     * Delete a specific resource.
+     *
+     * @param string $id
+     * @return mixed
+     */
     public function delete($id)
     {
 
