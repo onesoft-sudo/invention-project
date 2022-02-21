@@ -20,7 +20,7 @@ class %s extends Initializer
     }
 
     /**
-     * Initialize the app.
+     * Initialize the service.
      *
      * @return void
      */

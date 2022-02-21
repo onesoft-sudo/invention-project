@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d7001ebecadaa80cdf9deb4588cfc154",
+    "content-hash": "8db2ba30442bd84c676cdf56b476c13f",
     "packages": [
         {
             "name": "fakerphp/faker",
@@ -331,17 +331,62 @@
             "time": "2022-02-13T18:13:33+00:00"
         },
         {
+            "name": "osn/invention-cli",
+            "version": "v1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/onesoft-sudo/invention-cli.git",
+                "reference": "c558d819e1da69fff91be3b77ce57c1cd477410e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/onesoft-sudo/invention-cli/zipball/c558d819e1da69fff91be3b77ce57c1cd477410e",
+                "reference": "c558d819e1da69fff91be3b77ce57c1cd477410e",
+                "shasum": ""
+            },
+            "require": {
+                "osn/invention-framework": "dev-main",
+                "php": ">=8.0",
+                "symfony/console": "^5.4"
+            },
+            "bin": [
+                "bin/console"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OSN\\Invention\\CLI\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Ar Rakin",
+                    "email": "rakinar2@gmail.com"
+                }
+            ],
+            "description": "The Invention Framework Command-Line Tool",
+            "support": {
+                "issues": "https://github.com/onesoft-sudo/invention-cli/issues",
+                "source": "https://github.com/onesoft-sudo/invention-cli/tree/v1.0.6"
+            },
+            "time": "2022-02-21T14:45:21+00:00"
+        },
+        {
             "name": "osn/invention-framework",
             "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/onesoft-sudo/invention-framework.git",
-                "reference": "b9c35a9a30a6301b430ed9d7940f616ec7551756"
+                "reference": "a9b9d2de7061be8ad507b2adf8c5406cf2d373ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/onesoft-sudo/invention-framework/zipball/b9c35a9a30a6301b430ed9d7940f616ec7551756",
-                "reference": "b9c35a9a30a6301b430ed9d7940f616ec7551756",
+                "url": "https://api.github.com/repos/onesoft-sudo/invention-framework/zipball/a9b9d2de7061be8ad507b2adf8c5406cf2d373ed",
+                "reference": "a9b9d2de7061be8ad507b2adf8c5406cf2d373ed",
                 "shasum": ""
             },
             "require": {
@@ -350,7 +395,7 @@
                 "fakerphp/faker": "^1.18",
                 "monolog/monolog": "^2.3",
                 "nesbot/carbon": "^2.56",
-                "php": "^8.0",
+                "php": ">=8.0",
                 "psr/container": "^2.0",
                 "symfony/console": "^5.4",
                 "symfony/var-dumper": "^5.4",
@@ -384,7 +429,7 @@
                 "issues": "https://github.com/onesoft-sudo/invention-framework/issues",
                 "source": "https://github.com/onesoft-sudo/invention-framework/tree/main"
             },
-            "time": "2022-02-17T17:57:45+00:00"
+            "time": "2022-02-21T14:28:23+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -1974,16 +2019,16 @@
         },
         {
             "name": "phar-io/version",
-            "version": "3.1.1",
+            "version": "3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phar-io/version.git",
-                "reference": "15a90844ad40f127afd244c0cad228de2a80052a"
+                "reference": "4f7fd7836c6f332bb2933569e566a0d6c4cbed74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phar-io/version/zipball/15a90844ad40f127afd244c0cad228de2a80052a",
-                "reference": "15a90844ad40f127afd244c0cad228de2a80052a",
+                "url": "https://api.github.com/repos/phar-io/version/zipball/4f7fd7836c6f332bb2933569e566a0d6c4cbed74",
+                "reference": "4f7fd7836c6f332bb2933569e566a0d6c4cbed74",
                 "shasum": ""
             },
             "require": {
@@ -2019,9 +2064,9 @@
             "description": "Library for handling version information and constraints",
             "support": {
                 "issues": "https://github.com/phar-io/version/issues",
-                "source": "https://github.com/phar-io/version/tree/3.1.1"
+                "source": "https://github.com/phar-io/version/tree/3.2.1"
             },
-            "time": "2022-02-07T21:56:48+00:00"
+            "time": "2022-02-21T01:04:05+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -2252,16 +2297,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.10",
+            "version": "9.2.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "d5850aaf931743067f4bfc1ae4cbd06468400687"
+                "reference": "665a1ac0a763c51afc30d6d130dac0813092b17f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/d5850aaf931743067f4bfc1ae4cbd06468400687",
-                "reference": "d5850aaf931743067f4bfc1ae4cbd06468400687",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/665a1ac0a763c51afc30d6d130dac0813092b17f",
+                "reference": "665a1ac0a763c51afc30d6d130dac0813092b17f",
                 "shasum": ""
             },
             "require": {
@@ -2317,7 +2362,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.10"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.11"
             },
             "funding": [
                 {
@@ -2325,7 +2370,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-05T09:12:13+00:00"
+            "time": "2022-02-18T12:46:09+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -2570,16 +2615,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.5.13",
+            "version": "9.5.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "597cb647654ede35e43b137926dfdfef0fb11743"
+                "reference": "1883687169c017d6ae37c58883ca3994cfc34189"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/597cb647654ede35e43b137926dfdfef0fb11743",
-                "reference": "597cb647654ede35e43b137926dfdfef0fb11743",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1883687169c017d6ae37c58883ca3994cfc34189",
+                "reference": "1883687169c017d6ae37c58883ca3994cfc34189",
                 "shasum": ""
             },
             "require": {
@@ -2657,7 +2702,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.13"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.14"
             },
             "funding": [
                 {
@@ -2669,7 +2714,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-01-24T07:33:35+00:00"
+            "time": "2022-02-18T12:54:07+00:00"
         },
         {
             "name": "sebastian/cli-parser",

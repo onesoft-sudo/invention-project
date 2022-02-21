@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use OSN\Framework\Core\Controller;
 
-class %s extends Controller
+class MC extends Controller
 {
     // TODO
 }

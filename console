@@ -1,39 +1,6 @@
 #!/usr/bin/env php
 <?php
 
-require __DIR__ . "/vendor/autoload.php";
+const ROOT_DIR = __DIR__;
 
-use App\Commands\Console\ClearCommand;
-use App\Commands\Console\DBCommand;
-use App\Commands\Console\DefaultCommand;
-use App\Commands\Console\Make\ControllerCommand;
-use App\Commands\Console\Make\MigrationCommand;
-use App\Commands\Console\Make\ModelCommand;
-use App\Commands\Console\Migrate\MigrateCommand;
-use App\Commands\Console\Migrate\RebuildCommand;
-use App\Commands\Console\Migrate\ResetCommand;
-use App\Commands\Console\ServeCommand;
-use OSN\Framework\Console\App;
-
-$dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-$app = new App(__DIR__);
-
-// -- migrate:* --
-$app->add(new MigrateCommand());
-$app->add(new RebuildCommand());
-$app->add(new ResetCommand());
-// --/ migrate:* --
-
-// -- make:* --
-$app->add(new ControllerCommand());
-$app->add(new ModelCommand());
-$app->add(new MigrationCommand());
-// --/ make:* --
-
-// -- serve:* --
-$app->add(new ServeCommand());
-// --/ serve:* --
-
-$app->run();
+require_once __DIR__ . "/vendor/bin/console";

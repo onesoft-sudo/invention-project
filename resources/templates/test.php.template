@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests;
+namespace Tests\%s;
 
-use PHPUnit\Framework\TestCase;
+use %s\TestCase;
 
 class %s extends TestCase
 {
-
+    // TODO
 }

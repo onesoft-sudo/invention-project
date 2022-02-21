@@ -23,18 +23,40 @@ class ControllerCommand extends Command
             ->addArgument('name', InputArgument::REQUIRED, 'The controller class name')
             ->addOption(
                 'api',
-                null,
+                'a',
                 InputOption::VALUE_NONE,
                 'Specifies that it should generate an API controller'
+            )
+            ->addOption(
+                'resource',
+                'r',
+                InputOption::VALUE_NONE,
+                'Specifies that it should generate a resource controller'
             );
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $api = $input->getOption('api') !== false;
+        $resource = $input->getOption('resource') !== false;
         $name = $input->getArgument('name');
 
-        $this->generator->generate(app()->config["root_dir"] . "/app/Http/Controllers/{$name}.php", $api ? 'controller-api.php' : 'controller.php', function () use ($output, $name) {
+        if ($api && $resource) {
+            $output->writeln("<error>Passing conflicting options --api/-a and --resource/-r together</error>");
+            exit(-1);
+        }
+
+        $template = 'controller.php';
+
+        if ($api) {
+            $template = 'controller-api.php';
+        }
+
+        if ($resource) {
+            $template = 'controller-resource.php';
+        }
+
+        $this->generator->generate(app()->config["root_dir"] . "/app/Http/Controllers/{$name}.php", $template, function () use ($output, $name) {
             $output->writeln("<info>Controller created</info>: $name");
         }, function ($e) use ($name, $output) {
             $output->writeln("<error>Cannot generate controller</error>: $name.php: <comment>$e</comment>");

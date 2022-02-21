@@ -6,5 +6,5 @@ use Exception as BaseException;
 
 class %s extends BaseException
 {
-
+    // TODO
 }

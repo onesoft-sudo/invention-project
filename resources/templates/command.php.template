@@ -3,23 +3,22 @@
 
 namespace App\Commands;
 
-use OSN\Framework\Console\ArgumentCollection;
 use OSN\Framework\Console\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 
 class %s extends Command
 {
-    public function __construct()
-    {
+    protected static $defaultName = "name:subcmd";
+    protected static $defaultDescription = "Description";
 
+    protected function configure()
+    {
+        //
     }
 
-    public function subcommandsDescription(): array
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        return [];
-    }
-
-    public function default(ArgumentCollection $args)
-    {
-
+        return 0;
     }
 }
