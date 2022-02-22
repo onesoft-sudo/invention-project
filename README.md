@@ -10,7 +10,7 @@ The invention project skeleton repository. The project and the framework was ins
 **Framework Repo**: [https://github.com/onesoft-sudo/invention-framework](https://github.com/onesoft-sudo/invention-framework)
 
 ## Installation
-Refer [here](https://github.com/onesoft-sudo/invention-project#direct-installation).
+Refer [here](https://github.com/onesoft-sudo/invention-framework#direct-installation).
 
 ## Contributing
-Refer [here](https://github.com/onesoft-sudo/invention-project#contributing).
+Refer [here](https://github.com/onesoft-sudo/invention-framework#contributing).
