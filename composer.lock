@@ -332,16 +332,16 @@
         },
         {
             "name": "osn/invention-cli",
-            "version": "v1.0.6",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/onesoft-sudo/invention-cli.git",
-                "reference": "c558d819e1da69fff91be3b77ce57c1cd477410e"
+                "reference": "ab68cc97b3f1f9f3e919a0223eafad9972a688db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/onesoft-sudo/invention-cli/zipball/c558d819e1da69fff91be3b77ce57c1cd477410e",
-                "reference": "c558d819e1da69fff91be3b77ce57c1cd477410e",
+                "url": "https://api.github.com/repos/onesoft-sudo/invention-cli/zipball/ab68cc97b3f1f9f3e919a0223eafad9972a688db",
+                "reference": "ab68cc97b3f1f9f3e919a0223eafad9972a688db",
                 "shasum": ""
             },
             "require": {
@@ -371,9 +371,9 @@
             "description": "The Invention Framework Command-Line Tool",
             "support": {
                 "issues": "https://github.com/onesoft-sudo/invention-cli/issues",
-                "source": "https://github.com/onesoft-sudo/invention-cli/tree/v1.0.6"
+                "source": "https://github.com/onesoft-sudo/invention-cli/tree/v1.0.7"
             },
-            "time": "2022-02-21T14:45:21+00:00"
+            "time": "2022-02-21T16:43:39+00:00"
         },
         {
             "name": "osn/invention-framework",
