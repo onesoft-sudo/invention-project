@@ -3,14 +3,14 @@
 [![Build](https://github.com/onesoft-sudo/invention-project/actions/workflows/php.yml/badge.svg?branch=main)](https://github.com/onesoft-sudo/invention-project/actions/workflows/php.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/onesoft-sudo/invention-project/badge)](https://www.codefactor.io/repository/github/onesoft-sudo/invention-project)
 
-The invention project skeleton repository. 
+The invention project skeleton repository. The project and the framework was inspired by [thecodeholic/php-mvc-framework](https://github.com/thecodeholic/php-mvc-framework).
 
 **Note**: This project is currently in development. It is not recommended to use this in production until a stable version gets released. 
 
 **Framework Repo**: [https://github.com/onesoft-sudo/invention-framework](https://github.com/onesoft-sudo/invention-framework)
 
 ## Installation
-Refer [here](https://github.com/onesoft-sudo/invention-project#direct-installation).
+Refer [here](https://github.com/onesoft-sudo/invention-framework#creating-an-invention-based-project).
 
 ## Contributing
-Refer [here](https://github.com/onesoft-sudo/invention-project#contributing).
+Refer [here](https://github.com/onesoft-sudo/invention-framework#contributing).
