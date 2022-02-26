@@ -4,6 +4,7 @@
 <a href="/api/v1" class="btn btn-primary">API v1</a>
 
 <div class="pt-3">
+    {{ elapsed_time() }}
     <?php
     echo "<pre>";
     print_r($_SESSION);
