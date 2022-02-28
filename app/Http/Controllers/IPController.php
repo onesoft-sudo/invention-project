@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use OSN\Framework\Core\Controller;
 use OSN\Framework\Http\Request;
+use OSN\Framework\Log\Logger;
 
 class IPController extends Controller
 {
@@ -13,8 +14,9 @@ class IPController extends Controller
      *
      * @return mixed
      */
-    public function index()
+    public function index(Logger $logger)
     {
+        //$logger->critical("Cannot find config files: Permission Denied");
         return ['success' => true];
     }
 
