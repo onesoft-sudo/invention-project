@@ -7,3 +7,5 @@ node_modules/
 phpdoc.xml
 docs/
 doctum.config.php
+composer.lock
+package-lock.json
