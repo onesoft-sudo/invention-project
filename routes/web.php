@@ -20,10 +20,10 @@ Router::get("/posts", "posts");
 Router::assignAPIController("/form", TestFormController::class);
 Router::assignAPIController("/api/v1", APIController::class);
 Router::put("/form", [TestFormController::class, "update"]);
-
-Router::get("/login", [AuthController::class])->name("login");
-Router::post("/login", [AuthController::class, "login"]);
-Router::get("/logout", [AuthController::class, "logout"]);
+//
+//Router::get("/login", [AuthController::class])->name("login");
+//Router::post("/login", [AuthController::class, "login"]);
+//Router::get("/logout", [AuthController::class, "logout"]);
 
 Router::get("/register", [RegisterController::class])->name('register');
 Router::post("/register", [RegisterController::class, "store"]);
@@ -36,5 +36,10 @@ Router::get('/bind', function (\OSN\Framework\Http\Request $request) {
 });
 Router::assignWebController("/params", \App\Http\Controllers\ParameterController::class);
 Router::get("/params/(\d+)/bs/(\d+)-([A-Za-z0-9]+)", [\App\Http\Controllers\ParameterController::class, 'test'])->name('abc');
+
+Router::autoRegister([
+    \App\Http\Controllers\CarController::class,
+    AuthController::class
+]);
 
 //dp(\App\Core\App::$app->router);

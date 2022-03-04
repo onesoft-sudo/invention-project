@@ -3,6 +3,8 @@
 
 namespace App\Http\Controllers;
 
+use OSN\Framework\Attributes\GETRoute;
+use OSN\Framework\Attributes\POSTRoute;
 use OSN\Framework\Core\App;
 use App\Http\Requests\AuthUserRequest;
 use App\Models\User;
@@ -11,7 +13,6 @@ use OSN\Framework\Facades\Response;
 use App\Http\Middleware\LoginMiddleware;
 use OSN\Framework\Facades\Auth;
 use OSN\Framework\Facades\Hash;
-use OSN\Framework\View\View;
 
 class AuthController extends Controller
 {
@@ -20,11 +21,13 @@ class AuthController extends Controller
         $this->setMiddleware([LoginMiddleware::class], ["index", "login"]);
     }
 
+    #[GETRoute('/login', 'login')]
     public function index()
     {
         return $this->render("auth");
     }
 
+    #[POSTRoute('/login', 'login.store')]
     public function login(AuthUserRequest $request)
     {
         if (!$request->validate()) {
@@ -52,6 +55,7 @@ class AuthController extends Controller
         }
     }
 
+    #[GETRoute('/logout')]
     public function logout()
     {
         Auth::destroyAuth();
