@@ -5,6 +5,7 @@ namespace App\Initializers;
 
 
 use OSN\Framework\Core\Initializer;
+use OSN\Framework\Facades\Router;
 
 class RouteInitializer extends Initializer
 {
@@ -28,15 +29,17 @@ class RouteInitializer extends Initializer
      */
     public function init()
     {
-        /**
+        /*
          * The web routes.
          */
         require basepath("/routes/web.php");
 
-        /**
+        /*
          * The API routes.
          */
         require basepath("/routes/api.php");
+
+        Router::registerAllControllers();
     }
 
     /**

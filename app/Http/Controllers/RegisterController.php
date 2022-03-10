@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 use App\Http\Middleware\LoginMiddleware;
 use App\Http\Requests\RegisterUserRequest;
 use App\Models\User;
+use OSN\Framework\Attributes\GETRoute;
+use OSN\Framework\Attributes\POSTRoute;
 use OSN\Framework\Core\App;
 use OSN\Framework\Core\Controller;
 use OSN\Framework\Facades\Hash;
@@ -20,11 +22,13 @@ class RegisterController extends Controller
         $this->setMiddleware([LoginMiddleware::class]);
     }
 
+    #[GETRoute('/register')]
     public function index()
     {
         return $this->render('register');
     }
 
+    #[POSTRoute('/register')]
     public function store(RegisterUserRequest $request)
     {
         if (!$request->validate()) {

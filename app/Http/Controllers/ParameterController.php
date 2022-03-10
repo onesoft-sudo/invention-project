@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Param;
 use App\Models\User;
+use OSN\Framework\Attributes\GETRoute;
 use OSN\Framework\Core\Controller;
 use OSN\Framework\Core\Session;
 use OSN\Framework\Http\Request;
@@ -17,6 +18,7 @@ class ParameterController extends Controller
      *
      * @return mixed
      */
+    #[GETRoute('/params')]
     public function index()
     {
         $params = Param::all();
