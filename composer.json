@@ -29,7 +29,7 @@
     "require": {
         "php": ">=8.0",
         "osn/invention-framework": "dev-main",
-        "osn/invention-cli": "^1.0"
+        "osn/invention-cli": "^1.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5.13"

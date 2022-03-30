@@ -2,3 +2,4 @@
 !.gitignore
 !raw/
 !files/
+!cacheconfig.json
